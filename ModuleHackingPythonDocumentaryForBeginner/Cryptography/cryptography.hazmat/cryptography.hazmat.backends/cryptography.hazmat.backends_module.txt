@@ -1,0 +1,20 @@
+Help on package cryptography.hazmat.backends in cryptography.hazmat:
+
+NAME
+    cryptography.hazmat.backends
+
+DESCRIPTION
+    # This file is dual licensed under the terms of the Apache License, Version
+    # 2.0, and the BSD License. See the LICENSE file in the root of this repository
+    # for complete details.
+
+PACKAGE CONTENTS
+    openssl (package)
+
+FUNCTIONS
+    default_backend() -> 'Any'
+
+FILE
+    /data/data/com.termux/files/usr/lib/python3.12/site-packages/cryptography/hazmat/backends/__init__.py
+
+
