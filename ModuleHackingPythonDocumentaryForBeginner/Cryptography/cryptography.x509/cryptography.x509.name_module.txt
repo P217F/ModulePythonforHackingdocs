@@ -1,0 +1,158 @@
+Help on module cryptography.x509.name in cryptography.x509:
+
+NAME
+    cryptography.x509.name
+
+DESCRIPTION
+    # This file is dual licensed under the terms of the Apache License, Version
+    # 2.0, and the BSD License. See the LICENSE file in the root of this repository
+    # for complete details.
+
+CLASSES
+    builtins.object
+        Name
+        NameAttribute
+        RelativeDistinguishedName
+
+    class Name(builtins.object)
+     |  Name(attributes: 'typing.Iterable[NameAttribute | RelativeDistinguishedName]') -> 'None'
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, attributes: 'typing.Iterable[NameAttribute | RelativeDistinguishedName]') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__(self) -> 'typing.Iterator[NameAttribute]'
+     |
+     |  __len__(self) -> 'int'
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  get_attributes_for_oid(self, oid: 'ObjectIdentifier') -> 'list[NameAttribute]'
+     |
+     |  public_bytes(self, backend: 'typing.Any' = None) -> 'bytes'
+     |
+     |  rfc4514_string(self, attr_name_overrides: '_OidNameMap | None' = None) -> 'str'
+     |      Format as RFC4514 Distinguished Name string.
+     |      For example 'CN=foobar.com,O=Foo Corp,C=US'
+     |
+     |      An X.509 name is a two-level structure: a list of sets of attributes.
+     |      Each list element is separated by ',' and within each list element, set
+     |      elements are separated by '+'. The latter is almost never used in
+     |      real world certificates. According to RFC4514 section 2.1 the
+     |      RDNSequence must be reversed when converting to string representation.
+     |
+     |  ----------------------------------------------------------------------
+     |  Class methods defined here:
+     |
+     |  from_rfc4514_string(data: 'str', attr_name_overrides: '_NameOidMap | None' = None) -> 'Name'
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  rdns
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class NameAttribute(builtins.object)
+     |  NameAttribute(oid: 'ObjectIdentifier', value: 'str | bytes', _type: '_ASN1Type | None' = None, *, _validate: 'bool' = True) -> 'None'
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, oid: 'ObjectIdentifier', value: 'str | bytes', _type: '_ASN1Type | None' = None, *, _validate: 'bool' = True) -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  rfc4514_string(self, attr_name_overrides: '_OidNameMap | None' = None) -> 'str'
+     |      Format as RFC4514 Distinguished Name string.
+     |
+     |      Use short attribute name if available, otherwise fall back to OID
+     |      dotted string.
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  oid
+     |
+     |  rfc4514_attribute_name
+     |      The short attribute name (for example "CN") if available,
+     |      otherwise the OID dotted string.
+     |
+     |  value
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class RelativeDistinguishedName(builtins.object)
+     |  RelativeDistinguishedName(attributes: 'typing.Iterable[NameAttribute]')
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, attributes: 'typing.Iterable[NameAttribute]')
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__(self) -> 'typing.Iterator[NameAttribute]'
+     |
+     |  __len__(self) -> 'int'
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  get_attributes_for_oid(self, oid: 'ObjectIdentifier') -> 'list[NameAttribute]'
+     |
+     |  rfc4514_string(self, attr_name_overrides: '_OidNameMap | None' = None) -> 'str'
+     |      Format as RFC4514 Distinguished Name string.
+     |
+     |      Within each RDN, attributes are joined by '+', although that is rarely
+     |      used in certificates.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+DATA
+    __annotations__ = {'_NAMEOID_DEFAULT_TYPE': 'dict[ObjectIdentifier, _A...
+
+FILE
+    /data/data/com.termux/files/usr/lib/python3.12/site-packages/cryptography/x509/name.py
+
+

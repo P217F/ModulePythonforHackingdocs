@@ -1,0 +1,679 @@
+Help on module cryptography.x509.base in cryptography.x509:
+
+NAME
+    cryptography.x509.base
+
+DESCRIPTION
+    # This file is dual licensed under the terms of the Apache License, Version
+    # 2.0, and the BSD License. See the LICENSE file in the root of this repository
+    # for complete details.
+
+CLASSES
+    builtins.Exception(builtins.BaseException)
+        AttributeNotFound
+        InvalidVersion
+    builtins.object
+        cryptography.hazmat.bindings._rust.x509.Certificate
+        cryptography.hazmat.bindings._rust.x509.CertificateRevocationList
+        cryptography.hazmat.bindings._rust.x509.CertificateSigningRequest
+        Attribute
+        Attributes
+        CertificateBuilder
+        CertificateRevocationListBuilder
+        CertificateSigningRequestBuilder
+        RevokedCertificate
+        RevokedCertificateBuilder
+    cryptography.utils.Enum(enum.Enum)
+        Version
+
+    class Attribute(builtins.object)
+     |  Attribute(oid: 'ObjectIdentifier', value: 'bytes', _type: 'int' = 12) -> 'None'
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, oid: 'ObjectIdentifier', value: 'bytes', _type: 'int' = 12) -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  oid
+     |
+     |  value
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class AttributeNotFound(builtins.Exception)
+     |  AttributeNotFound(msg: 'str', oid: 'ObjectIdentifier') -> 'None'
+     |
+     |  Method resolution order:
+     |      AttributeNotFound
+     |      builtins.Exception
+     |      builtins.BaseException
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, msg: 'str', oid: 'ObjectIdentifier') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from builtins.Exception:
+     |
+     |  __new__(*args, **kwargs) class method of builtins.Exception
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.BaseException:
+     |
+     |  __getattribute__(self, name, /)
+     |      Return getattr(self, name).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __repr__(self, /)
+     |      Return repr(self).
+     |
+     |  __setstate__(...)
+     |
+     |  __str__(self, /)
+     |      Return str(self).
+     |
+     |  add_note(...)
+     |      Exception.add_note(note) --
+     |      add a note to the exception
+     |
+     |  with_traceback(...)
+     |      Exception.with_traceback(tb) --
+     |      set self.__traceback__ to tb and return self.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from builtins.BaseException:
+     |
+     |  __cause__
+     |      exception cause
+     |
+     |  __context__
+     |      exception context
+     |
+     |  __dict__
+     |
+     |  __suppress_context__
+     |
+     |  __traceback__
+     |
+     |  args
+
+    class Attributes(builtins.object)
+     |  Attributes(attributes: 'typing.Iterable[Attribute]') -> 'None'
+     |
+     |  Methods defined here:
+     |
+     |  __getitem__ = getitem_method(self, idx) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __init__(self, attributes: 'typing.Iterable[Attribute]') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__ = iter_method(self) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __len__ = len_method(self) -> 'int' from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  get_attribute_for_oid(self, oid: 'ObjectIdentifier') -> 'Attribute'
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class Certificate(builtins.object)
+     |  Methods defined here:
+     |
+     |  __deepcopy__(self, /, _memo)
+     |
+     |  __eq__(self, value, /)
+     |      Return self==value.
+     |
+     |  __ge__(self, value, /)
+     |      Return self>=value.
+     |
+     |  __gt__(self, value, /)
+     |      Return self>value.
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __le__(self, value, /)
+     |      Return self<=value.
+     |
+     |  __lt__(self, value, /)
+     |      Return self<value.
+     |
+     |  __ne__(self, value, /)
+     |      Return self!=value.
+     |
+     |  __repr__(self, /)
+     |      Return repr(self).
+     |
+     |  fingerprint(self, /, algorithm)
+     |
+     |  public_bytes(self, /, encoding)
+     |
+     |  public_key(self, /)
+     |
+     |  verify_directly_issued_by(self, /, issuer)
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods defined here:
+     |
+     |  __new__(*args, **kwargs)
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  extensions
+     |
+     |  issuer
+     |
+     |  not_valid_after
+     |
+     |  not_valid_after_utc
+     |
+     |  not_valid_before
+     |
+     |  not_valid_before_utc
+     |
+     |  public_key_algorithm_oid
+     |
+     |  serial_number
+     |
+     |  signature
+     |
+     |  signature_algorithm_oid
+     |
+     |  signature_algorithm_parameters
+     |
+     |  signature_hash_algorithm
+     |
+     |  subject
+     |
+     |  tbs_certificate_bytes
+     |
+     |  tbs_precertificate_bytes
+     |
+     |  version
+
+    class CertificateBuilder(builtins.object)
+     |  CertificateBuilder(issuer_name: 'Name | None' = None, subject_name: 'Name | None' = None, public_key: 'CertificatePublicKeyTypes | None' = None, serial_number: 'int | None' = None, not_valid_before: 'datetime.datetime | None' = None, not_valid_after: 'datetime.datetime | None' = None, extensions: 'list[Extension[ExtensionType]]' = []) -> 'None'
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, issuer_name: 'Name | None' = None, subject_name: 'Name | None' = None, public_key: 'CertificatePublicKeyTypes | None' = None, serial_number: 'int | None' = None, not_valid_before: 'datetime.datetime | None' = None, not_valid_after: 'datetime.datetime | None' = None, extensions: 'list[Extension[ExtensionType]]' = []) -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  add_extension(self, extval: 'ExtensionType', critical: 'bool') -> 'CertificateBuilder'
+     |      Adds an X.509 extension to the certificate.
+     |
+     |  issuer_name(self, name: 'Name') -> 'CertificateBuilder'
+     |      Sets the CA's distinguished name.
+     |
+     |  not_valid_after(self, time: 'datetime.datetime') -> 'CertificateBuilder'
+     |      Sets the certificate expiration time.
+     |
+     |  not_valid_before(self, time: 'datetime.datetime') -> 'CertificateBuilder'
+     |      Sets the certificate activation time.
+     |
+     |  public_key(self, key: 'CertificatePublicKeyTypes') -> 'CertificateBuilder'
+     |      Sets the requestor's public key (as found in the signing request).
+     |
+     |  serial_number(self, number: 'int') -> 'CertificateBuilder'
+     |      Sets the certificate serial number.
+     |
+     |  sign(self, private_key: 'CertificateIssuerPrivateKeyTypes', algorithm: '_AllowedHashTypes | None', backend: 'typing.Any' = None, *, rsa_padding: 'padding.PSS | padding.PKCS1v15 | None' = None) -> 'Certificate'
+     |      Signs the certificate using the CA's private key.
+     |
+     |  subject_name(self, name: 'Name') -> 'CertificateBuilder'
+     |      Sets the requestor's distinguished name.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __annotations__ = {'_extensions': 'list[Extension[ExtensionType]]'}
+
+    class CertificateRevocationList(builtins.object)
+     |  Methods defined here:
+     |
+     |  __eq__(self, value, /)
+     |      Return self==value.
+     |
+     |  __ge__(self, value, /)
+     |      Return self>=value.
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __gt__(self, value, /)
+     |      Return self>value.
+     |
+     |  __iter__(self, /)
+     |      Implement iter(self).
+     |
+     |  __le__(self, value, /)
+     |      Return self<=value.
+     |
+     |  __len__(self, /)
+     |      Return len(self).
+     |
+     |  __lt__(self, value, /)
+     |      Return self<value.
+     |
+     |  __ne__(self, value, /)
+     |      Return self!=value.
+     |
+     |  fingerprint(self, /, algorithm)
+     |
+     |  get_revoked_certificate_by_serial_number(self, /, serial)
+     |
+     |  is_signature_valid(self, /, public_key)
+     |
+     |  public_bytes(self, /, encoding)
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods defined here:
+     |
+     |  __new__(*args, **kwargs)
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  extensions
+     |
+     |  issuer
+     |
+     |  last_update
+     |
+     |  last_update_utc
+     |
+     |  next_update
+     |
+     |  next_update_utc
+     |
+     |  signature
+     |
+     |  signature_algorithm_oid
+     |
+     |  signature_algorithm_parameters
+     |
+     |  signature_hash_algorithm
+     |
+     |  tbs_certlist_bytes
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __hash__ = None
+
+    class CertificateRevocationListBuilder(builtins.object)
+     |  CertificateRevocationListBuilder(issuer_name: 'Name | None' = None, last_update: 'datetime.datetime | None' = None, next_update: 'datetime.datetime | None' = None, extensions: 'list[Extension[ExtensionType]]' = [], revoked_certificates: 'list[RevokedCertificate]' = [])
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, issuer_name: 'Name | None' = None, last_update: 'datetime.datetime | None' = None, next_update: 'datetime.datetime | None' = None, extensions: 'list[Extension[ExtensionType]]' = [], revoked_certificates: 'list[RevokedCertificate]' = [])
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  add_extension(self, extval: 'ExtensionType', critical: 'bool') -> 'CertificateRevocationListBuilder'
+     |      Adds an X.509 extension to the certificate revocation list.
+     |
+     |  add_revoked_certificate(self, revoked_certificate: 'RevokedCertificate') -> 'CertificateRevocationListBuilder'
+     |      Adds a revoked certificate to the CRL.
+     |
+     |  issuer_name(self, issuer_name: 'Name') -> 'CertificateRevocationListBuilder'
+     |
+     |  last_update(self, last_update: 'datetime.datetime') -> 'CertificateRevocationListBuilder'
+     |
+     |  next_update(self, next_update: 'datetime.datetime') -> 'CertificateRevocationListBuilder'
+     |
+     |  sign(self, private_key: 'CertificateIssuerPrivateKeyTypes', algorithm: '_AllowedHashTypes | None', backend: 'typing.Any' = None, *, rsa_padding: 'padding.PSS | padding.PKCS1v15 | None' = None) -> 'CertificateRevocationList'
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __annotations__ = {'_extensions': 'list[Extension[ExtensionType]]', '_...
+
+    class CertificateSigningRequest(builtins.object)
+     |  Methods defined here:
+     |
+     |  __eq__(self, value, /)
+     |      Return self==value.
+     |
+     |  __ge__(self, value, /)
+     |      Return self>=value.
+     |
+     |  __gt__(self, value, /)
+     |      Return self>value.
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __le__(self, value, /)
+     |      Return self<=value.
+     |
+     |  __lt__(self, value, /)
+     |      Return self<value.
+     |
+     |  __ne__(self, value, /)
+     |      Return self!=value.
+     |
+     |  get_attribute_for_oid(self, /, oid)
+     |
+     |  public_bytes(self, /, encoding)
+     |
+     |  public_key(self, /)
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods defined here:
+     |
+     |  __new__(*args, **kwargs)
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  attributes
+     |
+     |  extensions
+     |
+     |  is_signature_valid
+     |
+     |  public_key_algorithm_oid
+     |
+     |  signature
+     |
+     |  signature_algorithm_oid
+     |
+     |  signature_algorithm_parameters
+     |
+     |  signature_hash_algorithm
+     |
+     |  subject
+     |
+     |  tbs_certrequest_bytes
+
+    class CertificateSigningRequestBuilder(builtins.object)
+     |  CertificateSigningRequestBuilder(subject_name: 'Name | None' = None, extensions: 'list[Extension[ExtensionType]]' = [], attributes: 'list[tuple[ObjectIdentifier, bytes, int | None]]' = [])
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, subject_name: 'Name | None' = None, extensions: 'list[Extension[ExtensionType]]' = [], attributes: 'list[tuple[ObjectIdentifier, bytes, int | None]]' = [])
+     |      Creates an empty X.509 certificate request (v1).
+     |
+     |  add_attribute(self, oid: 'ObjectIdentifier', value: 'bytes', *, _tag: '_ASN1Type | None' = None) -> 'CertificateSigningRequestBuilder'
+     |      Adds an X.509 attribute with an OID and associated value.
+     |
+     |  add_extension(self, extval: 'ExtensionType', critical: 'bool') -> 'CertificateSigningRequestBuilder'
+     |      Adds an X.509 extension to the certificate request.
+     |
+     |  sign(self, private_key: 'CertificateIssuerPrivateKeyTypes', algorithm: '_AllowedHashTypes | None', backend: 'typing.Any' = None, *, rsa_padding: 'padding.PSS | padding.PKCS1v15 | None' = None) -> 'CertificateSigningRequest'
+     |      Signs the request using the requestor's private key.
+     |
+     |  subject_name(self, name: 'Name') -> 'CertificateSigningRequestBuilder'
+     |      Sets the certificate requestor's distinguished name.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class InvalidVersion(builtins.Exception)
+     |  InvalidVersion(msg: 'str', parsed_version: 'int') -> 'None'
+     |
+     |  Method resolution order:
+     |      InvalidVersion
+     |      builtins.Exception
+     |      builtins.BaseException
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, msg: 'str', parsed_version: 'int') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from builtins.Exception:
+     |
+     |  __new__(*args, **kwargs) class method of builtins.Exception
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.BaseException:
+     |
+     |  __getattribute__(self, name, /)
+     |      Return getattr(self, name).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __repr__(self, /)
+     |      Return repr(self).
+     |
+     |  __setstate__(...)
+     |
+     |  __str__(self, /)
+     |      Return str(self).
+     |
+     |  add_note(...)
+     |      Exception.add_note(note) --
+     |      add a note to the exception
+     |
+     |  with_traceback(...)
+     |      Exception.with_traceback(tb) --
+     |      set self.__traceback__ to tb and return self.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from builtins.BaseException:
+     |
+     |  __cause__
+     |      exception cause
+     |
+     |  __context__
+     |      exception context
+     |
+     |  __dict__
+     |
+     |  __suppress_context__
+     |
+     |  __traceback__
+     |
+     |  args
+
+    class RevokedCertificate(builtins.object)
+     |  Readonly properties defined here:
+     |
+     |  extensions
+     |      Returns an Extensions object containing a list of Revoked extensions.
+     |
+     |  revocation_date
+     |      Returns the date of when this certificate was revoked.
+     |
+     |  revocation_date_utc
+     |      Returns the date of when this certificate was revoked as a non-naive
+     |      UTC datetime.
+     |
+     |  serial_number
+     |      Returns the serial number of the revoked certificate.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset({'extensions', 'revocation_date', 'rev...
+
+    class RevokedCertificateBuilder(builtins.object)
+     |  RevokedCertificateBuilder(serial_number: 'int | None' = None, revocation_date: 'datetime.datetime | None' = None, extensions: 'list[Extension[ExtensionType]]' = [])
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, serial_number: 'int | None' = None, revocation_date: 'datetime.datetime | None' = None, extensions: 'list[Extension[ExtensionType]]' = [])
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  add_extension(self, extval: 'ExtensionType', critical: 'bool') -> 'RevokedCertificateBuilder'
+     |
+     |  build(self, backend: 'typing.Any' = None) -> 'RevokedCertificate'
+     |
+     |  revocation_date(self, time: 'datetime.datetime') -> 'RevokedCertificateBuilder'
+     |
+     |  serial_number(self, number: 'int') -> 'RevokedCertificateBuilder'
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class Version(cryptography.utils.Enum)
+     |  Version(*values)
+     |
+     |  Method resolution order:
+     |      Version
+     |      cryptography.utils.Enum
+     |      enum.Enum
+     |      builtins.object
+     |
+     |  Data and other attributes defined here:
+     |
+     |  v1 = <Version.v1: 0>
+     |
+     |  v3 = <Version.v3: 2>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from enum.Enum:
+     |
+     |  name
+     |      The name of the Enum member.
+     |
+     |  value
+     |      The value of the Enum member.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from enum.EnumType:
+     |
+     |  __contains__(value)
+     |      Return True if `value` is in `cls`.
+     |
+     |      `value` is in `cls` if:
+     |      1) `value` is a member of `cls`, or
+     |      2) `value` is the value of one of the `cls`'s members.
+     |
+     |  __getitem__(name)
+     |      Return the member matching `name`.
+     |
+     |  __iter__()
+     |      Return members in definition order.
+     |
+     |  __len__()
+     |      Return the number of members (no aliases)
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties inherited from enum.EnumType:
+     |
+     |  __members__
+     |      Returns a mapping of member name->value.
+     |
+     |      This mapping lists all enum members, including aliases. Note that this
+     |      is a read-only view of the internal mapping.
+
+FUNCTIONS
+    load_der_x509_certificate(data, backend=None)
+
+    load_der_x509_crl(data, backend=None)
+
+    load_der_x509_csr(data, backend=None)
+
+    load_pem_x509_certificate(data, backend=None)
+
+    load_pem_x509_certificates(data)
+
+    load_pem_x509_crl(data, backend=None)
+
+    load_pem_x509_csr(data, backend=None)
+
+    random_serial_number() -> 'int'
+
+DATA
+    CertificateIssuerPrivateKeyTypes = typing.Union[cryptography.hazmat.pr...
+    CertificatePublicKeyTypes = typing.Union[cryptography.hazmat.primitive...
+
+FILE
+    /data/data/com.termux/files/usr/lib/python3.12/site-packages/cryptography/x509/base.py
+
+

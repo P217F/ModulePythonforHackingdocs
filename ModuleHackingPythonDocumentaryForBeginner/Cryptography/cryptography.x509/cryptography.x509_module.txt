@@ -1,0 +1,3720 @@
+Help on package cryptography.x509 in cryptography:
+
+NAME
+    cryptography.x509
+
+DESCRIPTION
+    # This file is dual licensed under the terms of the Apache License, Version
+    # 2.0, and the BSD License. See the LICENSE file in the root of this repository
+    # for complete details.
+
+PACKAGE CONTENTS
+    base
+    certificate_transparency
+    extensions
+    general_name
+    name
+    ocsp
+    oid
+    verification
+
+CLASSES
+    builtins.Exception(builtins.BaseException)
+        cryptography.x509.base.AttributeNotFound
+        cryptography.x509.base.InvalidVersion
+        cryptography.x509.extensions.DuplicateExtension
+        cryptography.x509.extensions.ExtensionNotFound
+        cryptography.x509.general_name.UnsupportedGeneralNameType
+    builtins.object
+        cryptography.hazmat._oid.NameOID
+        cryptography.hazmat._oid.PublicKeyAlgorithmOID
+        cryptography.hazmat._oid.SignatureAlgorithmOID
+        cryptography.hazmat.bindings._rust.ObjectIdentifier
+        cryptography.hazmat.bindings._rust.x509.Certificate
+        cryptography.hazmat.bindings._rust.x509.CertificateRevocationList
+        cryptography.hazmat.bindings._rust.x509.CertificateSigningRequest
+        cryptography.x509.base.Attribute
+        cryptography.x509.base.Attributes
+        cryptography.x509.base.CertificateBuilder
+        cryptography.x509.base.CertificateRevocationListBuilder
+        cryptography.x509.base.CertificateSigningRequestBuilder
+        cryptography.x509.base.RevokedCertificate
+        cryptography.x509.base.RevokedCertificateBuilder
+        cryptography.x509.extensions.AccessDescription
+        cryptography.x509.extensions.Admission
+        cryptography.x509.extensions.DistributionPoint
+        cryptography.x509.extensions.ExtensionType
+            cryptography.x509.extensions.Admissions
+            cryptography.x509.extensions.AuthorityInformationAccess
+            cryptography.x509.extensions.AuthorityKeyIdentifier
+            cryptography.x509.extensions.BasicConstraints
+            cryptography.x509.extensions.CRLDistributionPoints
+            cryptography.x509.extensions.CRLNumber
+            cryptography.x509.extensions.CRLReason
+            cryptography.x509.extensions.CertificateIssuer
+            cryptography.x509.extensions.CertificatePolicies
+            cryptography.x509.extensions.DeltaCRLIndicator
+            cryptography.x509.extensions.ExtendedKeyUsage
+            cryptography.x509.extensions.FreshestCRL
+            cryptography.x509.extensions.InhibitAnyPolicy
+            cryptography.x509.extensions.InvalidityDate
+            cryptography.x509.extensions.IssuerAlternativeName
+            cryptography.x509.extensions.IssuingDistributionPoint
+            cryptography.x509.extensions.KeyUsage
+            cryptography.x509.extensions.MSCertificateTemplate
+            cryptography.x509.extensions.NameConstraints
+            cryptography.x509.extensions.OCSPAcceptableResponses
+            cryptography.x509.extensions.OCSPNoCheck
+            cryptography.x509.extensions.OCSPNonce
+            cryptography.x509.extensions.PolicyConstraints
+            cryptography.x509.extensions.PrecertPoison
+            cryptography.x509.extensions.PrecertificateSignedCertificateTimestamps
+            cryptography.x509.extensions.SignedCertificateTimestamps
+            cryptography.x509.extensions.SubjectAlternativeName
+            cryptography.x509.extensions.SubjectInformationAccess
+            cryptography.x509.extensions.SubjectKeyIdentifier
+            cryptography.x509.extensions.TLSFeature
+            cryptography.x509.extensions.UnrecognizedExtension
+        cryptography.x509.extensions.Extensions
+        cryptography.x509.extensions.GeneralNames
+        cryptography.x509.extensions.NamingAuthority
+        cryptography.x509.extensions.NoticeReference
+        cryptography.x509.extensions.PolicyInformation
+        cryptography.x509.extensions.ProfessionInfo
+        cryptography.x509.extensions.UserNotice
+        cryptography.x509.general_name.GeneralName
+            cryptography.x509.general_name.DNSName
+            cryptography.x509.general_name.DirectoryName
+            cryptography.x509.general_name.IPAddress
+            cryptography.x509.general_name.OtherName
+            cryptography.x509.general_name.RFC822Name
+            cryptography.x509.general_name.RegisteredID
+            cryptography.x509.general_name.UniformResourceIdentifier
+        cryptography.x509.name.Name
+        cryptography.x509.name.NameAttribute
+        cryptography.x509.name.RelativeDistinguishedName
+    cryptography.utils.Enum(enum.Enum)
+        cryptography.x509.base.Version
+        cryptography.x509.extensions.ReasonFlags
+        cryptography.x509.extensions.TLSFeatureType
+    typing.Generic(builtins.object)
+        cryptography.x509.extensions.Extension
+
+    class AccessDescription(builtins.object)
+     |  AccessDescription(access_method: 'ObjectIdentifier', access_location: 'GeneralName') -> 'None'
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, access_method: 'ObjectIdentifier', access_location: 'GeneralName') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  access_location
+     |
+     |  access_method
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class Admission(builtins.object)
+     |  Admission(admission_authority: 'GeneralName | None', naming_authority: 'NamingAuthority | None', profession_infos: 'typing.Iterable[ProfessionInfo]') -> 'None'
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, admission_authority: 'GeneralName | None', naming_authority: 'NamingAuthority | None', profession_infos: 'typing.Iterable[ProfessionInfo]') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  admission_authority
+     |
+     |  naming_authority
+     |
+     |  profession_infos
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class Admissions(ExtensionType)
+     |  Admissions(authority: 'GeneralName | None', admissions: 'typing.Iterable[Admission]') -> 'None'
+     |
+     |  Method resolution order:
+     |      Admissions
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __getitem__ = getitem_method(self, idx) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, authority: 'GeneralName | None', admissions: 'typing.Iterable[Admission]') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__ = iter_method(self) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __len__ = len_method(self) -> 'int' from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  authority
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=1.3.36.8.3.3, name=Admissions)>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class Attribute(builtins.object)
+     |  Attribute(oid: 'ObjectIdentifier', value: 'bytes', _type: 'int' = 12) -> 'None'
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, oid: 'ObjectIdentifier', value: 'bytes', _type: 'int' = 12) -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  oid
+     |
+     |  value
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class AttributeNotFound(builtins.Exception)
+     |  AttributeNotFound(msg: 'str', oid: 'ObjectIdentifier') -> 'None'
+     |
+     |  Method resolution order:
+     |      AttributeNotFound
+     |      builtins.Exception
+     |      builtins.BaseException
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, msg: 'str', oid: 'ObjectIdentifier') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from builtins.Exception:
+     |
+     |  __new__(*args, **kwargs) class method of builtins.Exception
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.BaseException:
+     |
+     |  __getattribute__(self, name, /)
+     |      Return getattr(self, name).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __repr__(self, /)
+     |      Return repr(self).
+     |
+     |  __setstate__(...)
+     |
+     |  __str__(self, /)
+     |      Return str(self).
+     |
+     |  add_note(...)
+     |      Exception.add_note(note) --
+     |      add a note to the exception
+     |
+     |  with_traceback(...)
+     |      Exception.with_traceback(tb) --
+     |      set self.__traceback__ to tb and return self.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from builtins.BaseException:
+     |
+     |  __cause__
+     |      exception cause
+     |
+     |  __context__
+     |      exception context
+     |
+     |  __dict__
+     |
+     |  __suppress_context__
+     |
+     |  __traceback__
+     |
+     |  args
+
+    class Attributes(builtins.object)
+     |  Attributes(attributes: 'typing.Iterable[Attribute]') -> 'None'
+     |
+     |  Methods defined here:
+     |
+     |  __getitem__ = getitem_method(self, idx) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __init__(self, attributes: 'typing.Iterable[Attribute]') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__ = iter_method(self) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __len__ = len_method(self) -> 'int' from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  get_attribute_for_oid(self, oid: 'ObjectIdentifier') -> 'Attribute'
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class AuthorityInformationAccess(ExtensionType)
+     |  AuthorityInformationAccess(descriptions: 'typing.Iterable[AccessDescription]') -> 'None'
+     |
+     |  Method resolution order:
+     |      AuthorityInformationAccess
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __getitem__ = getitem_method(self, idx) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, descriptions: 'typing.Iterable[AccessDescription]') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__ = iter_method(self) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __len__ = len_method(self) -> 'int' from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=1.3.6.1.5.5.7.1.1, name=authorityInfoAcces...
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class AuthorityKeyIdentifier(ExtensionType)
+     |  AuthorityKeyIdentifier(key_identifier: 'bytes | None', authority_cert_issuer: 'typing.Iterable[GeneralName] | None', authority_cert_serial_number: 'int | None') -> 'None'
+     |
+     |  Method resolution order:
+     |      AuthorityKeyIdentifier
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, key_identifier: 'bytes | None', authority_cert_issuer: 'typing.Iterable[GeneralName] | None', authority_cert_serial_number: 'int | None') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Class methods defined here:
+     |
+     |  from_issuer_public_key(public_key: 'CertificateIssuerPublicKeyTypes') -> 'AuthorityKeyIdentifier'
+     |      # This takes a subset of CertificatePublicKeyTypes because an issuer
+     |      # cannot have an X25519/X448 key. This introduces some unfortunate
+     |      # asymmetry that requires typing users to explicitly
+     |      # narrow their type, but we should make this accurate and not just
+     |      # convenient.
+     |
+     |  from_issuer_subject_key_identifier(ski: 'SubjectKeyIdentifier') -> 'AuthorityKeyIdentifier'
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  authority_cert_issuer
+     |
+     |  authority_cert_serial_number
+     |
+     |  key_identifier
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=2.5.29.35, name=authorityKeyIdentifier)>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class BasicConstraints(ExtensionType)
+     |  BasicConstraints(ca: 'bool', path_length: 'int | None') -> 'None'
+     |
+     |  Method resolution order:
+     |      BasicConstraints
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, ca: 'bool', path_length: 'int | None') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  ca
+     |
+     |  path_length
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=2.5.29.19, name=basicConstraints)>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class CRLDistributionPoints(ExtensionType)
+     |  CRLDistributionPoints(distribution_points: 'typing.Iterable[DistributionPoint]') -> 'None'
+     |
+     |  Method resolution order:
+     |      CRLDistributionPoints
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __getitem__ = getitem_method(self, idx) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, distribution_points: 'typing.Iterable[DistributionPoint]') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__ = iter_method(self) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __len__ = len_method(self) -> 'int' from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=2.5.29.31, name=cRLDistributionPoints)>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class CRLNumber(ExtensionType)
+     |  CRLNumber(crl_number: 'int') -> 'None'
+     |
+     |  Method resolution order:
+     |      CRLNumber
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, crl_number: 'int') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  crl_number
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=2.5.29.20, name=cRLNumber)>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class CRLReason(ExtensionType)
+     |  CRLReason(reason: 'ReasonFlags') -> 'None'
+     |
+     |  Method resolution order:
+     |      CRLReason
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, reason: 'ReasonFlags') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  reason
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=2.5.29.21, name=cRLReason)>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class Certificate(builtins.object)
+     |  Methods defined here:
+     |
+     |  __deepcopy__(self, /, _memo)
+     |
+     |  __eq__(self, value, /)
+     |      Return self==value.
+     |
+     |  __ge__(self, value, /)
+     |      Return self>=value.
+     |
+     |  __gt__(self, value, /)
+     |      Return self>value.
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __le__(self, value, /)
+     |      Return self<=value.
+     |
+     |  __lt__(self, value, /)
+     |      Return self<value.
+     |
+     |  __ne__(self, value, /)
+     |      Return self!=value.
+     |
+     |  __repr__(self, /)
+     |      Return repr(self).
+     |
+     |  fingerprint(self, /, algorithm)
+     |
+     |  public_bytes(self, /, encoding)
+     |
+     |  public_key(self, /)
+     |
+     |  verify_directly_issued_by(self, /, issuer)
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods defined here:
+     |
+     |  __new__(*args, **kwargs)
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  extensions
+     |
+     |  issuer
+     |
+     |  not_valid_after
+     |
+     |  not_valid_after_utc
+     |
+     |  not_valid_before
+     |
+     |  not_valid_before_utc
+     |
+     |  public_key_algorithm_oid
+     |
+     |  serial_number
+     |
+     |  signature
+     |
+     |  signature_algorithm_oid
+     |
+     |  signature_algorithm_parameters
+     |
+     |  signature_hash_algorithm
+     |
+     |  subject
+     |
+     |  tbs_certificate_bytes
+     |
+     |  tbs_precertificate_bytes
+     |
+     |  version
+
+    class CertificateBuilder(builtins.object)
+     |  CertificateBuilder(issuer_name: 'Name | None' = None, subject_name: 'Name | None' = None, public_key: 'CertificatePublicKeyTypes | None' = None, serial_number: 'int | None' = None, not_valid_before: 'datetime.datetime | None' = None, not_valid_after: 'datetime.datetime | None' = None, extensions: 'list[Extension[ExtensionType]]' = []) -> 'None'
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, issuer_name: 'Name | None' = None, subject_name: 'Name | None' = None, public_key: 'CertificatePublicKeyTypes | None' = None, serial_number: 'int | None' = None, not_valid_before: 'datetime.datetime | None' = None, not_valid_after: 'datetime.datetime | None' = None, extensions: 'list[Extension[ExtensionType]]' = []) -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  add_extension(self, extval: 'ExtensionType', critical: 'bool') -> 'CertificateBuilder'
+     |      Adds an X.509 extension to the certificate.
+     |
+     |  issuer_name(self, name: 'Name') -> 'CertificateBuilder'
+     |      Sets the CA's distinguished name.
+     |
+     |  not_valid_after(self, time: 'datetime.datetime') -> 'CertificateBuilder'
+     |      Sets the certificate expiration time.
+     |
+     |  not_valid_before(self, time: 'datetime.datetime') -> 'CertificateBuilder'
+     |      Sets the certificate activation time.
+     |
+     |  public_key(self, key: 'CertificatePublicKeyTypes') -> 'CertificateBuilder'
+     |      Sets the requestor's public key (as found in the signing request).
+     |
+     |  serial_number(self, number: 'int') -> 'CertificateBuilder'
+     |      Sets the certificate serial number.
+     |
+     |  sign(self, private_key: 'CertificateIssuerPrivateKeyTypes', algorithm: '_AllowedHashTypes | None', backend: 'typing.Any' = None, *, rsa_padding: 'padding.PSS | padding.PKCS1v15 | None' = None) -> 'Certificate'
+     |      Signs the certificate using the CA's private key.
+     |
+     |  subject_name(self, name: 'Name') -> 'CertificateBuilder'
+     |      Sets the requestor's distinguished name.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __annotations__ = {'_extensions': 'list[Extension[ExtensionType]]'}
+
+    class CertificateIssuer(ExtensionType)
+     |  CertificateIssuer(general_names: 'typing.Iterable[GeneralName]') -> 'None'
+     |
+     |  Method resolution order:
+     |      CertificateIssuer
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __getitem__ = getitem_method(self, idx) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, general_names: 'typing.Iterable[GeneralName]') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__ = iter_method(self) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __len__ = len_method(self) -> 'int' from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  get_values_for_type(self, type: 'type[DNSName] | type[DirectoryName] | type[IPAddress] | type[OtherName] | type[RFC822Name] | type[RegisteredID] | type[UniformResourceIdentifier]') -> 'list[_IPAddressTypes] | list[str] | list[OtherName] | list[Name] | list[ObjectIdentifier]'
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=2.5.29.29, name=certificateIssuer)>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class CertificatePolicies(ExtensionType)
+     |  CertificatePolicies(policies: 'typing.Iterable[PolicyInformation]') -> 'None'
+     |
+     |  Method resolution order:
+     |      CertificatePolicies
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __getitem__ = getitem_method(self, idx) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, policies: 'typing.Iterable[PolicyInformation]') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__ = iter_method(self) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __len__ = len_method(self) -> 'int' from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=2.5.29.32, name=certificatePolicies)>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class CertificateRevocationList(builtins.object)
+     |  Methods defined here:
+     |
+     |  __eq__(self, value, /)
+     |      Return self==value.
+     |
+     |  __ge__(self, value, /)
+     |      Return self>=value.
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __gt__(self, value, /)
+     |      Return self>value.
+     |
+     |  __iter__(self, /)
+     |      Implement iter(self).
+     |
+     |  __le__(self, value, /)
+     |      Return self<=value.
+     |
+     |  __len__(self, /)
+     |      Return len(self).
+     |
+     |  __lt__(self, value, /)
+     |      Return self<value.
+     |
+     |  __ne__(self, value, /)
+     |      Return self!=value.
+     |
+     |  fingerprint(self, /, algorithm)
+     |
+     |  get_revoked_certificate_by_serial_number(self, /, serial)
+     |
+     |  is_signature_valid(self, /, public_key)
+     |
+     |  public_bytes(self, /, encoding)
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods defined here:
+     |
+     |  __new__(*args, **kwargs)
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  extensions
+     |
+     |  issuer
+     |
+     |  last_update
+     |
+     |  last_update_utc
+     |
+     |  next_update
+     |
+     |  next_update_utc
+     |
+     |  signature
+     |
+     |  signature_algorithm_oid
+     |
+     |  signature_algorithm_parameters
+     |
+     |  signature_hash_algorithm
+     |
+     |  tbs_certlist_bytes
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __hash__ = None
+
+    class CertificateRevocationListBuilder(builtins.object)
+     |  CertificateRevocationListBuilder(issuer_name: 'Name | None' = None, last_update: 'datetime.datetime | None' = None, next_update: 'datetime.datetime | None' = None, extensions: 'list[Extension[ExtensionType]]' = [], revoked_certificates: 'list[RevokedCertificate]' = [])
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, issuer_name: 'Name | None' = None, last_update: 'datetime.datetime | None' = None, next_update: 'datetime.datetime | None' = None, extensions: 'list[Extension[ExtensionType]]' = [], revoked_certificates: 'list[RevokedCertificate]' = [])
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  add_extension(self, extval: 'ExtensionType', critical: 'bool') -> 'CertificateRevocationListBuilder'
+     |      Adds an X.509 extension to the certificate revocation list.
+     |
+     |  add_revoked_certificate(self, revoked_certificate: 'RevokedCertificate') -> 'CertificateRevocationListBuilder'
+     |      Adds a revoked certificate to the CRL.
+     |
+     |  issuer_name(self, issuer_name: 'Name') -> 'CertificateRevocationListBuilder'
+     |
+     |  last_update(self, last_update: 'datetime.datetime') -> 'CertificateRevocationListBuilder'
+     |
+     |  next_update(self, next_update: 'datetime.datetime') -> 'CertificateRevocationListBuilder'
+     |
+     |  sign(self, private_key: 'CertificateIssuerPrivateKeyTypes', algorithm: '_AllowedHashTypes | None', backend: 'typing.Any' = None, *, rsa_padding: 'padding.PSS | padding.PKCS1v15 | None' = None) -> 'CertificateRevocationList'
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __annotations__ = {'_extensions': 'list[Extension[ExtensionType]]', '_...
+
+    class CertificateSigningRequest(builtins.object)
+     |  Methods defined here:
+     |
+     |  __eq__(self, value, /)
+     |      Return self==value.
+     |
+     |  __ge__(self, value, /)
+     |      Return self>=value.
+     |
+     |  __gt__(self, value, /)
+     |      Return self>value.
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __le__(self, value, /)
+     |      Return self<=value.
+     |
+     |  __lt__(self, value, /)
+     |      Return self<value.
+     |
+     |  __ne__(self, value, /)
+     |      Return self!=value.
+     |
+     |  get_attribute_for_oid(self, /, oid)
+     |
+     |  public_bytes(self, /, encoding)
+     |
+     |  public_key(self, /)
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods defined here:
+     |
+     |  __new__(*args, **kwargs)
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  attributes
+     |
+     |  extensions
+     |
+     |  is_signature_valid
+     |
+     |  public_key_algorithm_oid
+     |
+     |  signature
+     |
+     |  signature_algorithm_oid
+     |
+     |  signature_algorithm_parameters
+     |
+     |  signature_hash_algorithm
+     |
+     |  subject
+     |
+     |  tbs_certrequest_bytes
+
+    class CertificateSigningRequestBuilder(builtins.object)
+     |  CertificateSigningRequestBuilder(subject_name: 'Name | None' = None, extensions: 'list[Extension[ExtensionType]]' = [], attributes: 'list[tuple[ObjectIdentifier, bytes, int | None]]' = [])
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, subject_name: 'Name | None' = None, extensions: 'list[Extension[ExtensionType]]' = [], attributes: 'list[tuple[ObjectIdentifier, bytes, int | None]]' = [])
+     |      Creates an empty X.509 certificate request (v1).
+     |
+     |  add_attribute(self, oid: 'ObjectIdentifier', value: 'bytes', *, _tag: '_ASN1Type | None' = None) -> 'CertificateSigningRequestBuilder'
+     |      Adds an X.509 attribute with an OID and associated value.
+     |
+     |  add_extension(self, extval: 'ExtensionType', critical: 'bool') -> 'CertificateSigningRequestBuilder'
+     |      Adds an X.509 extension to the certificate request.
+     |
+     |  sign(self, private_key: 'CertificateIssuerPrivateKeyTypes', algorithm: '_AllowedHashTypes | None', backend: 'typing.Any' = None, *, rsa_padding: 'padding.PSS | padding.PKCS1v15 | None' = None) -> 'CertificateSigningRequest'
+     |      Signs the request using the requestor's private key.
+     |
+     |  subject_name(self, name: 'Name') -> 'CertificateSigningRequestBuilder'
+     |      Sets the certificate requestor's distinguished name.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class DNSName(GeneralName)
+     |  DNSName(value: 'str') -> 'None'
+     |
+     |  Method resolution order:
+     |      DNSName
+     |      GeneralName
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, value: 'str') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  value
+     |      Return the value of the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from GeneralName:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class DeltaCRLIndicator(ExtensionType)
+     |  DeltaCRLIndicator(crl_number: 'int') -> 'None'
+     |
+     |  Method resolution order:
+     |      DeltaCRLIndicator
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, crl_number: 'int') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  crl_number
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=2.5.29.27, name=deltaCRLIndicator)>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class DirectoryName(GeneralName)
+     |  DirectoryName(value: 'Name') -> 'None'
+     |
+     |  Method resolution order:
+     |      DirectoryName
+     |      GeneralName
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, value: 'Name') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  value
+     |      Return the value of the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from GeneralName:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class DistributionPoint(builtins.object)
+     |  DistributionPoint(full_name: 'typing.Iterable[GeneralName] | None', relative_name: 'RelativeDistinguishedName | None', reasons: 'frozenset[ReasonFlags] | None', crl_issuer: 'typing.Iterable[GeneralName] | None') -> 'None'
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, full_name: 'typing.Iterable[GeneralName] | None', relative_name: 'RelativeDistinguishedName | None', reasons: 'frozenset[ReasonFlags] | None', crl_issuer: 'typing.Iterable[GeneralName] | None') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  crl_issuer
+     |
+     |  full_name
+     |
+     |  reasons
+     |
+     |  relative_name
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class DuplicateExtension(builtins.Exception)
+     |  DuplicateExtension(msg: 'str', oid: 'ObjectIdentifier') -> 'None'
+     |
+     |  Method resolution order:
+     |      DuplicateExtension
+     |      builtins.Exception
+     |      builtins.BaseException
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, msg: 'str', oid: 'ObjectIdentifier') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from builtins.Exception:
+     |
+     |  __new__(*args, **kwargs) class method of builtins.Exception
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.BaseException:
+     |
+     |  __getattribute__(self, name, /)
+     |      Return getattr(self, name).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __repr__(self, /)
+     |      Return repr(self).
+     |
+     |  __setstate__(...)
+     |
+     |  __str__(self, /)
+     |      Return str(self).
+     |
+     |  add_note(...)
+     |      Exception.add_note(note) --
+     |      add a note to the exception
+     |
+     |  with_traceback(...)
+     |      Exception.with_traceback(tb) --
+     |      set self.__traceback__ to tb and return self.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from builtins.BaseException:
+     |
+     |  __cause__
+     |      exception cause
+     |
+     |  __context__
+     |      exception context
+     |
+     |  __dict__
+     |
+     |  __suppress_context__
+     |
+     |  __traceback__
+     |
+     |  args
+
+    class ExtendedKeyUsage(ExtensionType)
+     |  ExtendedKeyUsage(usages: 'typing.Iterable[ObjectIdentifier]') -> 'None'
+     |
+     |  Method resolution order:
+     |      ExtendedKeyUsage
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __getitem__ = getitem_method(self, idx) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, usages: 'typing.Iterable[ObjectIdentifier]') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__ = iter_method(self) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __len__ = len_method(self) -> 'int' from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=2.5.29.37, name=extendedKeyUsage)>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class Extension(typing.Generic)
+     |  Extension(oid: 'ObjectIdentifier', critical: 'bool', value: 'ExtensionTypeVar') -> 'None'
+     |
+     |  Method resolution order:
+     |      Extension
+     |      typing.Generic
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, oid: 'ObjectIdentifier', critical: 'bool', value: 'ExtensionTypeVar') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  critical
+     |
+     |  oid
+     |
+     |  value
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __orig_bases__ = (typing.Generic[+ExtensionTypeVar],)
+     |
+     |  __parameters__ = (+ExtensionTypeVar,)
+     |
+     |  ----------------------------------------------------------------------
+     |  Class methods inherited from typing.Generic:
+     |
+     |  __class_getitem__(...)
+     |      Parameterizes a generic class.
+     |
+     |      At least, parameterizing a generic class is the *main* thing this
+     |      method does. For example, for some generic class `Foo`, this is called
+     |      when we do `Foo[int]` - there, with `cls=Foo` and `params=int`.
+     |
+     |      However, note that this method is also called when defining generic
+     |      classes in the first place with `class Foo[T]: ...`.
+     |
+     |  __init_subclass__(...)
+     |      Function to initialize subclasses.
+
+    class ExtensionNotFound(builtins.Exception)
+     |  ExtensionNotFound(msg: 'str', oid: 'ObjectIdentifier') -> 'None'
+     |
+     |  Method resolution order:
+     |      ExtensionNotFound
+     |      builtins.Exception
+     |      builtins.BaseException
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, msg: 'str', oid: 'ObjectIdentifier') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from builtins.Exception:
+     |
+     |  __new__(*args, **kwargs) class method of builtins.Exception
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.BaseException:
+     |
+     |  __getattribute__(self, name, /)
+     |      Return getattr(self, name).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __repr__(self, /)
+     |      Return repr(self).
+     |
+     |  __setstate__(...)
+     |
+     |  __str__(self, /)
+     |      Return str(self).
+     |
+     |  add_note(...)
+     |      Exception.add_note(note) --
+     |      add a note to the exception
+     |
+     |  with_traceback(...)
+     |      Exception.with_traceback(tb) --
+     |      set self.__traceback__ to tb and return self.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from builtins.BaseException:
+     |
+     |  __cause__
+     |      exception cause
+     |
+     |  __context__
+     |      exception context
+     |
+     |  __dict__
+     |
+     |  __suppress_context__
+     |
+     |  __traceback__
+     |
+     |  args
+
+    class ExtensionType(builtins.object)
+     |  Methods defined here:
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {'oid': 'typing.ClassVar[ObjectIdentifier]'}
+
+    class Extensions(builtins.object)
+     |  Extensions(extensions: 'typing.Iterable[Extension[ExtensionType]]') -> 'None'
+     |
+     |  Methods defined here:
+     |
+     |  __getitem__ = getitem_method(self, idx) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __init__(self, extensions: 'typing.Iterable[Extension[ExtensionType]]') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__ = iter_method(self) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __len__ = len_method(self) -> 'int' from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  get_extension_for_class(self, extclass: 'type[ExtensionTypeVar]') -> 'Extension[ExtensionTypeVar]'
+     |
+     |  get_extension_for_oid(self, oid: 'ObjectIdentifier') -> 'Extension[ExtensionType]'
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class FreshestCRL(ExtensionType)
+     |  FreshestCRL(distribution_points: 'typing.Iterable[DistributionPoint]') -> 'None'
+     |
+     |  Method resolution order:
+     |      FreshestCRL
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __getitem__ = getitem_method(self, idx) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, distribution_points: 'typing.Iterable[DistributionPoint]') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__ = iter_method(self) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __len__ = len_method(self) -> 'int' from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=2.5.29.46, name=freshestCRL)>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class GeneralName(builtins.object)
+     |  Readonly properties defined here:
+     |
+     |  value
+     |      Return the value of the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset({'value'})
+
+    class GeneralNames(builtins.object)
+     |  GeneralNames(general_names: 'typing.Iterable[GeneralName]') -> 'None'
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __getitem__ = getitem_method(self, idx) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, general_names: 'typing.Iterable[GeneralName]') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__ = iter_method(self) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __len__ = len_method(self) -> 'int' from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  get_values_for_type(self, type: 'type[DNSName] | type[DirectoryName] | type[IPAddress] | type[OtherName] | type[RFC822Name] | type[RegisteredID] | type[UniformResourceIdentifier]') -> 'list[_IPAddressTypes] | list[str] | list[OtherName] | list[Name] | list[ObjectIdentifier]'
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class IPAddress(GeneralName)
+     |  IPAddress(value: '_IPAddressTypes') -> 'None'
+     |
+     |  Method resolution order:
+     |      IPAddress
+     |      GeneralName
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, value: '_IPAddressTypes') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  value
+     |      Return the value of the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from GeneralName:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class InhibitAnyPolicy(ExtensionType)
+     |  InhibitAnyPolicy(skip_certs: 'int') -> 'None'
+     |
+     |  Method resolution order:
+     |      InhibitAnyPolicy
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, skip_certs: 'int') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  skip_certs
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=2.5.29.54, name=inhibitAnyPolicy)>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class InvalidVersion(builtins.Exception)
+     |  InvalidVersion(msg: 'str', parsed_version: 'int') -> 'None'
+     |
+     |  Method resolution order:
+     |      InvalidVersion
+     |      builtins.Exception
+     |      builtins.BaseException
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, msg: 'str', parsed_version: 'int') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from builtins.Exception:
+     |
+     |  __new__(*args, **kwargs) class method of builtins.Exception
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.BaseException:
+     |
+     |  __getattribute__(self, name, /)
+     |      Return getattr(self, name).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __repr__(self, /)
+     |      Return repr(self).
+     |
+     |  __setstate__(...)
+     |
+     |  __str__(self, /)
+     |      Return str(self).
+     |
+     |  add_note(...)
+     |      Exception.add_note(note) --
+     |      add a note to the exception
+     |
+     |  with_traceback(...)
+     |      Exception.with_traceback(tb) --
+     |      set self.__traceback__ to tb and return self.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from builtins.BaseException:
+     |
+     |  __cause__
+     |      exception cause
+     |
+     |  __context__
+     |      exception context
+     |
+     |  __dict__
+     |
+     |  __suppress_context__
+     |
+     |  __traceback__
+     |
+     |  args
+
+    class InvalidityDate(ExtensionType)
+     |  InvalidityDate(invalidity_date: 'datetime.datetime') -> 'None'
+     |
+     |  Method resolution order:
+     |      InvalidityDate
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, invalidity_date: 'datetime.datetime') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  invalidity_date
+     |
+     |  invalidity_date_utc
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=2.5.29.24, name=invalidityDate)>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class IssuerAlternativeName(ExtensionType)
+     |  IssuerAlternativeName(general_names: 'typing.Iterable[GeneralName]') -> 'None'
+     |
+     |  Method resolution order:
+     |      IssuerAlternativeName
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __getitem__ = getitem_method(self, idx) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, general_names: 'typing.Iterable[GeneralName]') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__ = iter_method(self) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __len__ = len_method(self) -> 'int' from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  get_values_for_type(self, type: 'type[DNSName] | type[DirectoryName] | type[IPAddress] | type[OtherName] | type[RFC822Name] | type[RegisteredID] | type[UniformResourceIdentifier]') -> 'list[_IPAddressTypes] | list[str] | list[OtherName] | list[Name] | list[ObjectIdentifier]'
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=2.5.29.18, name=issuerAltName)>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class IssuingDistributionPoint(ExtensionType)
+     |  IssuingDistributionPoint(full_name: 'typing.Iterable[GeneralName] | None', relative_name: 'RelativeDistinguishedName | None', only_contains_user_certs: 'bool', only_contains_ca_certs: 'bool', only_some_reasons: 'frozenset[ReasonFlags] | None', indirect_crl: 'bool', only_contains_attribute_certs: 'bool') -> 'None'
+     |
+     |  Method resolution order:
+     |      IssuingDistributionPoint
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, full_name: 'typing.Iterable[GeneralName] | None', relative_name: 'RelativeDistinguishedName | None', only_contains_user_certs: 'bool', only_contains_ca_certs: 'bool', only_some_reasons: 'frozenset[ReasonFlags] | None', indirect_crl: 'bool', only_contains_attribute_certs: 'bool') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  full_name
+     |
+     |  indirect_crl
+     |
+     |  only_contains_attribute_certs
+     |
+     |  only_contains_ca_certs
+     |
+     |  only_contains_user_certs
+     |
+     |  only_some_reasons
+     |
+     |  relative_name
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=2.5.29.28, name=issuingDistributionPoint)>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class KeyUsage(ExtensionType)
+     |  KeyUsage(digital_signature: 'bool', content_commitment: 'bool', key_encipherment: 'bool', data_encipherment: 'bool', key_agreement: 'bool', key_cert_sign: 'bool', crl_sign: 'bool', encipher_only: 'bool', decipher_only: 'bool') -> 'None'
+     |
+     |  Method resolution order:
+     |      KeyUsage
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, digital_signature: 'bool', content_commitment: 'bool', key_encipherment: 'bool', data_encipherment: 'bool', key_agreement: 'bool', key_cert_sign: 'bool', crl_sign: 'bool', encipher_only: 'bool', decipher_only: 'bool') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  content_commitment
+     |
+     |  crl_sign
+     |
+     |  data_encipherment
+     |
+     |  decipher_only
+     |
+     |  digital_signature
+     |
+     |  encipher_only
+     |
+     |  key_agreement
+     |
+     |  key_cert_sign
+     |
+     |  key_encipherment
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=2.5.29.15, name=keyUsage)>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class MSCertificateTemplate(ExtensionType)
+     |  MSCertificateTemplate(template_id: 'ObjectIdentifier', major_version: 'int | None', minor_version: 'int | None') -> 'None'
+     |
+     |  Method resolution order:
+     |      MSCertificateTemplate
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, template_id: 'ObjectIdentifier', major_version: 'int | None', minor_version: 'int | None') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  major_version
+     |
+     |  minor_version
+     |
+     |  template_id
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=1.3.6.1.4.1.311.21.7, name=msCertificateTe...
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class Name(builtins.object)
+     |  Name(attributes: 'typing.Iterable[NameAttribute | RelativeDistinguishedName]') -> 'None'
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, attributes: 'typing.Iterable[NameAttribute | RelativeDistinguishedName]') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__(self) -> 'typing.Iterator[NameAttribute]'
+     |
+     |  __len__(self) -> 'int'
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  get_attributes_for_oid(self, oid: 'ObjectIdentifier') -> 'list[NameAttribute]'
+     |
+     |  public_bytes(self, backend: 'typing.Any' = None) -> 'bytes'
+     |
+     |  rfc4514_string(self, attr_name_overrides: '_OidNameMap | None' = None) -> 'str'
+     |      Format as RFC4514 Distinguished Name string.
+     |      For example 'CN=foobar.com,O=Foo Corp,C=US'
+     |
+     |      An X.509 name is a two-level structure: a list of sets of attributes.
+     |      Each list element is separated by ',' and within each list element, set
+     |      elements are separated by '+'. The latter is almost never used in
+     |      real world certificates. According to RFC4514 section 2.1 the
+     |      RDNSequence must be reversed when converting to string representation.
+     |
+     |  ----------------------------------------------------------------------
+     |  Class methods defined here:
+     |
+     |  from_rfc4514_string(data: 'str', attr_name_overrides: '_NameOidMap | None' = None) -> 'Name'
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  rdns
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class NameAttribute(builtins.object)
+     |  NameAttribute(oid: 'ObjectIdentifier', value: 'str | bytes', _type: '_ASN1Type | None' = None, *, _validate: 'bool' = True) -> 'None'
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, oid: 'ObjectIdentifier', value: 'str | bytes', _type: '_ASN1Type | None' = None, *, _validate: 'bool' = True) -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  rfc4514_string(self, attr_name_overrides: '_OidNameMap | None' = None) -> 'str'
+     |      Format as RFC4514 Distinguished Name string.
+     |
+     |      Use short attribute name if available, otherwise fall back to OID
+     |      dotted string.
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  oid
+     |
+     |  rfc4514_attribute_name
+     |      The short attribute name (for example "CN") if available,
+     |      otherwise the OID dotted string.
+     |
+     |  value
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class NameConstraints(ExtensionType)
+     |  NameConstraints(permitted_subtrees: 'typing.Iterable[GeneralName] | None', excluded_subtrees: 'typing.Iterable[GeneralName] | None') -> 'None'
+     |
+     |  Method resolution order:
+     |      NameConstraints
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, permitted_subtrees: 'typing.Iterable[GeneralName] | None', excluded_subtrees: 'typing.Iterable[GeneralName] | None') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  excluded_subtrees
+     |
+     |  permitted_subtrees
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=2.5.29.30, name=nameConstraints)>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class NameOID(builtins.object)
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  BUSINESS_CATEGORY = <ObjectIdentifier(oid=2.5.4.15, name=businessCateg...
+     |
+     |  COMMON_NAME = <ObjectIdentifier(oid=2.5.4.3, name=commonName)>
+     |
+     |  COUNTRY_NAME = <ObjectIdentifier(oid=2.5.4.6, name=countryName)>
+     |
+     |  DN_QUALIFIER = <ObjectIdentifier(oid=2.5.4.46, name=dnQualifier)>
+     |
+     |  DOMAIN_COMPONENT = <ObjectIdentifier(oid=0.9.2342.19200300.100.1.25, n...
+     |
+     |  EMAIL_ADDRESS = <ObjectIdentifier(oid=1.2.840.113549.1.9.1, name=email...
+     |
+     |  GENERATION_QUALIFIER = <ObjectIdentifier(oid=2.5.4.44, name=generation...
+     |
+     |  GIVEN_NAME = <ObjectIdentifier(oid=2.5.4.42, name=givenName)>
+     |
+     |  INITIALS = <ObjectIdentifier(oid=2.5.4.43, name=Unknown OID)>
+     |
+     |  INN = <ObjectIdentifier(oid=1.2.643.3.131.1.1, name=INN)>
+     |
+     |  JURISDICTION_COUNTRY_NAME = <ObjectIdentifier(oid=1.3.6.1.4.1.311.60.2...
+     |
+     |  JURISDICTION_LOCALITY_NAME = <ObjectIdentifier(oid=1.3.6.1.4.1.311.60....
+     |
+     |  JURISDICTION_STATE_OR_PROVINCE_NAME = <ObjectIdentifier(oid=1.3.6.1.4....
+     |
+     |  LOCALITY_NAME = <ObjectIdentifier(oid=2.5.4.7, name=localityName)>
+     |
+     |  OGRN = <ObjectIdentifier(oid=1.2.643.100.1, name=OGRN)>
+     |
+     |  ORGANIZATIONAL_UNIT_NAME = <ObjectIdentifier(oid=2.5.4.11, name=organi...
+     |
+     |  ORGANIZATION_IDENTIFIER = <ObjectIdentifier(oid=2.5.4.97, name=Unknown...
+     |
+     |  ORGANIZATION_NAME = <ObjectIdentifier(oid=2.5.4.10, name=organizationN...
+     |
+     |  POSTAL_ADDRESS = <ObjectIdentifier(oid=2.5.4.16, name=postalAddress)>
+     |
+     |  POSTAL_CODE = <ObjectIdentifier(oid=2.5.4.17, name=postalCode)>
+     |
+     |  PSEUDONYM = <ObjectIdentifier(oid=2.5.4.65, name=pseudonym)>
+     |
+     |  SERIAL_NUMBER = <ObjectIdentifier(oid=2.5.4.5, name=serialNumber)>
+     |
+     |  SNILS = <ObjectIdentifier(oid=1.2.643.100.3, name=SNILS)>
+     |
+     |  STATE_OR_PROVINCE_NAME = <ObjectIdentifier(oid=2.5.4.8, name=stateOrPr...
+     |
+     |  STREET_ADDRESS = <ObjectIdentifier(oid=2.5.4.9, name=streetAddress)>
+     |
+     |  SURNAME = <ObjectIdentifier(oid=2.5.4.4, name=surname)>
+     |
+     |  TITLE = <ObjectIdentifier(oid=2.5.4.12, name=title)>
+     |
+     |  UNSTRUCTURED_NAME = <ObjectIdentifier(oid=1.2.840.113549.1.9.2, name=u...
+     |
+     |  USER_ID = <ObjectIdentifier(oid=0.9.2342.19200300.100.1.1, name=userID...
+     |
+     |  X500_UNIQUE_IDENTIFIER = <ObjectIdentifier(oid=2.5.4.45, name=x500Uniq...
+
+    class NamingAuthority(builtins.object)
+     |  NamingAuthority(id: 'ObjectIdentifier | None', url: 'str | None', text: 'str | None') -> 'None'
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, id: 'ObjectIdentifier | None', url: 'str | None', text: 'str | None') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  id
+     |
+     |  text
+     |
+     |  url
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class NoticeReference(builtins.object)
+     |  NoticeReference(organization: 'str | None', notice_numbers: 'typing.Iterable[int]') -> 'None'
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, organization: 'str | None', notice_numbers: 'typing.Iterable[int]') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  notice_numbers
+     |
+     |  organization
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class OCSPAcceptableResponses(ExtensionType)
+     |  OCSPAcceptableResponses(responses: 'typing.Iterable[ObjectIdentifier]') -> 'None'
+     |
+     |  Method resolution order:
+     |      OCSPAcceptableResponses
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, responses: 'typing.Iterable[ObjectIdentifier]') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__(self) -> 'typing.Iterator[ObjectIdentifier]'
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=1.3.6.1.5.5.7.48.1.4, name=Unknown OID)>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class OCSPNoCheck(ExtensionType)
+     |  Method resolution order:
+     |      OCSPNoCheck
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=1.3.6.1.5.5.7.48.1.5, name=OCSPNoCheck)>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class OCSPNonce(ExtensionType)
+     |  OCSPNonce(nonce: 'bytes') -> 'None'
+     |
+     |  Method resolution order:
+     |      OCSPNonce
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, nonce: 'bytes') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  nonce
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=1.3.6.1.5.5.7.48.1.2, name=OCSPNonce)>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class ObjectIdentifier(builtins.object)
+     |  ObjectIdentifier(value)
+     |
+     |  Methods defined here:
+     |
+     |  __deepcopy__(self, /, _memo)
+     |
+     |  __eq__(self, value, /)
+     |      Return self==value.
+     |
+     |  __ge__(self, value, /)
+     |      Return self>=value.
+     |
+     |  __gt__(self, value, /)
+     |      Return self>value.
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __le__(self, value, /)
+     |      Return self<=value.
+     |
+     |  __lt__(self, value, /)
+     |      Return self<value.
+     |
+     |  __ne__(self, value, /)
+     |      Return self!=value.
+     |
+     |  __repr__(self, /)
+     |      Return repr(self).
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods defined here:
+     |
+     |  __new__(*args, **kwargs)
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  dotted_string
+
+    class OtherName(GeneralName)
+     |  OtherName(type_id: 'ObjectIdentifier', value: 'bytes') -> 'None'
+     |
+     |  Method resolution order:
+     |      OtherName
+     |      GeneralName
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, type_id: 'ObjectIdentifier', value: 'bytes') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  type_id
+     |
+     |  value
+     |      Return the value of the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from GeneralName:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class PolicyConstraints(ExtensionType)
+     |  PolicyConstraints(require_explicit_policy: 'int | None', inhibit_policy_mapping: 'int | None') -> 'None'
+     |
+     |  Method resolution order:
+     |      PolicyConstraints
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, require_explicit_policy: 'int | None', inhibit_policy_mapping: 'int | None') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  inhibit_policy_mapping
+     |
+     |  require_explicit_policy
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=2.5.29.36, name=policyConstraints)>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class PolicyInformation(builtins.object)
+     |  PolicyInformation(policy_identifier: 'ObjectIdentifier', policy_qualifiers: 'typing.Iterable[str | UserNotice] | None') -> 'None'
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, policy_identifier: 'ObjectIdentifier', policy_qualifiers: 'typing.Iterable[str | UserNotice] | None') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  policy_identifier
+     |
+     |  policy_qualifiers
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class PrecertPoison(ExtensionType)
+     |  Method resolution order:
+     |      PrecertPoison
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=1.3.6.1.4.1.11129.2.4.3, name=ctPoison)>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class PrecertificateSignedCertificateTimestamps(ExtensionType)
+     |  PrecertificateSignedCertificateTimestamps(signed_certificate_timestamps: 'typing.Iterable[SignedCertificateTimestamp]') -> 'None'
+     |
+     |  Method resolution order:
+     |      PrecertificateSignedCertificateTimestamps
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __getitem__ = getitem_method(self, idx) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, signed_certificate_timestamps: 'typing.Iterable[SignedCertificateTimestamp]') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__ = iter_method(self) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __len__ = len_method(self) -> 'int' from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=1.3.6.1.4.1.11129.2.4.2, name=signedCertif...
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class ProfessionInfo(builtins.object)
+     |  ProfessionInfo(naming_authority: 'NamingAuthority | None', profession_items: 'typing.Iterable[str]', profession_oids: 'typing.Iterable[ObjectIdentifier] | None', registration_number: 'str | None', add_profession_info: 'bytes | None') -> 'None'
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, naming_authority: 'NamingAuthority | None', profession_items: 'typing.Iterable[str]', profession_oids: 'typing.Iterable[ObjectIdentifier] | None', registration_number: 'str | None', add_profession_info: 'bytes | None') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  add_profession_info
+     |
+     |  naming_authority
+     |
+     |  profession_items
+     |
+     |  profession_oids
+     |
+     |  registration_number
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class PublicKeyAlgorithmOID(builtins.object)
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  DSA = <ObjectIdentifier(oid=1.2.840.10040.4.1, name=dsaEncryption)>
+     |
+     |  EC_PUBLIC_KEY = <ObjectIdentifier(oid=1.2.840.10045.2.1, name=id-ecPub...
+     |
+     |  ED25519 = <ObjectIdentifier(oid=1.3.101.112, name=ed25519)>
+     |
+     |  ED448 = <ObjectIdentifier(oid=1.3.101.113, name=ed448)>
+     |
+     |  RSAES_PKCS1_v1_5 = <ObjectIdentifier(oid=1.2.840.113549.1.1.1, name=rs...
+     |
+     |  RSASSA_PSS = <ObjectIdentifier(oid=1.2.840.113549.1.1.10, name=rsassaP...
+     |
+     |  X25519 = <ObjectIdentifier(oid=1.3.101.110, name=X25519)>
+     |
+     |  X448 = <ObjectIdentifier(oid=1.3.101.111, name=X448)>
+
+    class RFC822Name(GeneralName)
+     |  RFC822Name(value: 'str') -> 'None'
+     |
+     |  Method resolution order:
+     |      RFC822Name
+     |      GeneralName
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, value: 'str') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  value
+     |      Return the value of the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from GeneralName:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class ReasonFlags(cryptography.utils.Enum)
+     |  ReasonFlags(*values)
+     |
+     |  Method resolution order:
+     |      ReasonFlags
+     |      cryptography.utils.Enum
+     |      enum.Enum
+     |      builtins.object
+     |
+     |  Data and other attributes defined here:
+     |
+     |  aa_compromise = <ReasonFlags.aa_compromise: 'aACompromise'>
+     |
+     |  affiliation_changed = <ReasonFlags.affiliation_changed: 'affiliationCh...
+     |
+     |  ca_compromise = <ReasonFlags.ca_compromise: 'cACompromise'>
+     |
+     |  certificate_hold = <ReasonFlags.certificate_hold: 'certificateHold'>
+     |
+     |  cessation_of_operation = <ReasonFlags.cessation_of_operation: 'cessati...
+     |
+     |  key_compromise = <ReasonFlags.key_compromise: 'keyCompromise'>
+     |
+     |  privilege_withdrawn = <ReasonFlags.privilege_withdrawn: 'privilegeWith...
+     |
+     |  remove_from_crl = <ReasonFlags.remove_from_crl: 'removeFromCRL'>
+     |
+     |  superseded = <ReasonFlags.superseded: 'superseded'>
+     |
+     |  unspecified = <ReasonFlags.unspecified: 'unspecified'>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from enum.Enum:
+     |
+     |  name
+     |      The name of the Enum member.
+     |
+     |  value
+     |      The value of the Enum member.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from enum.EnumType:
+     |
+     |  __contains__(value)
+     |      Return True if `value` is in `cls`.
+     |
+     |      `value` is in `cls` if:
+     |      1) `value` is a member of `cls`, or
+     |      2) `value` is the value of one of the `cls`'s members.
+     |
+     |  __getitem__(name)
+     |      Return the member matching `name`.
+     |
+     |  __iter__()
+     |      Return members in definition order.
+     |
+     |  __len__()
+     |      Return the number of members (no aliases)
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties inherited from enum.EnumType:
+     |
+     |  __members__
+     |      Returns a mapping of member name->value.
+     |
+     |      This mapping lists all enum members, including aliases. Note that this
+     |      is a read-only view of the internal mapping.
+
+    class RegisteredID(GeneralName)
+     |  RegisteredID(value: 'ObjectIdentifier') -> 'None'
+     |
+     |  Method resolution order:
+     |      RegisteredID
+     |      GeneralName
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, value: 'ObjectIdentifier') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  value
+     |      Return the value of the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from GeneralName:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class RelativeDistinguishedName(builtins.object)
+     |  RelativeDistinguishedName(attributes: 'typing.Iterable[NameAttribute]')
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, attributes: 'typing.Iterable[NameAttribute]')
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__(self) -> 'typing.Iterator[NameAttribute]'
+     |
+     |  __len__(self) -> 'int'
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  get_attributes_for_oid(self, oid: 'ObjectIdentifier') -> 'list[NameAttribute]'
+     |
+     |  rfc4514_string(self, attr_name_overrides: '_OidNameMap | None' = None) -> 'str'
+     |      Format as RFC4514 Distinguished Name string.
+     |
+     |      Within each RDN, attributes are joined by '+', although that is rarely
+     |      used in certificates.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class RevokedCertificate(builtins.object)
+     |  Readonly properties defined here:
+     |
+     |  extensions
+     |      Returns an Extensions object containing a list of Revoked extensions.
+     |
+     |  revocation_date
+     |      Returns the date of when this certificate was revoked.
+     |
+     |  revocation_date_utc
+     |      Returns the date of when this certificate was revoked as a non-naive
+     |      UTC datetime.
+     |
+     |  serial_number
+     |      Returns the serial number of the revoked certificate.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset({'extensions', 'revocation_date', 'rev...
+
+    class RevokedCertificateBuilder(builtins.object)
+     |  RevokedCertificateBuilder(serial_number: 'int | None' = None, revocation_date: 'datetime.datetime | None' = None, extensions: 'list[Extension[ExtensionType]]' = [])
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, serial_number: 'int | None' = None, revocation_date: 'datetime.datetime | None' = None, extensions: 'list[Extension[ExtensionType]]' = [])
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  add_extension(self, extval: 'ExtensionType', critical: 'bool') -> 'RevokedCertificateBuilder'
+     |
+     |  build(self, backend: 'typing.Any' = None) -> 'RevokedCertificate'
+     |
+     |  revocation_date(self, time: 'datetime.datetime') -> 'RevokedCertificateBuilder'
+     |
+     |  serial_number(self, number: 'int') -> 'RevokedCertificateBuilder'
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class SignatureAlgorithmOID(builtins.object)
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  DSA_WITH_SHA1 = <ObjectIdentifier(oid=1.2.840.10040.4.3, name=dsa-with...
+     |
+     |  DSA_WITH_SHA224 = <ObjectIdentifier(oid=2.16.840.1.101.3.4.3.1, name=d...
+     |
+     |  DSA_WITH_SHA256 = <ObjectIdentifier(oid=2.16.840.1.101.3.4.3.2, name=d...
+     |
+     |  DSA_WITH_SHA384 = <ObjectIdentifier(oid=2.16.840.1.101.3.4.3.3, name=U...
+     |
+     |  DSA_WITH_SHA512 = <ObjectIdentifier(oid=2.16.840.1.101.3.4.3.4, name=U...
+     |
+     |  ECDSA_WITH_SHA1 = <ObjectIdentifier(oid=1.2.840.10045.4.1, name=ecdsa-...
+     |
+     |  ECDSA_WITH_SHA224 = <ObjectIdentifier(oid=1.2.840.10045.4.3.1, name=ec...
+     |
+     |  ECDSA_WITH_SHA256 = <ObjectIdentifier(oid=1.2.840.10045.4.3.2, name=ec...
+     |
+     |  ECDSA_WITH_SHA384 = <ObjectIdentifier(oid=1.2.840.10045.4.3.3, name=ec...
+     |
+     |  ECDSA_WITH_SHA3_224 = <ObjectIdentifier(oid=2.16.840.1.101.3.4.3.9, na...
+     |
+     |  ECDSA_WITH_SHA3_256 = <ObjectIdentifier(oid=2.16.840.1.101.3.4.3.10, n...
+     |
+     |  ECDSA_WITH_SHA3_384 = <ObjectIdentifier(oid=2.16.840.1.101.3.4.3.11, n...
+     |
+     |  ECDSA_WITH_SHA3_512 = <ObjectIdentifier(oid=2.16.840.1.101.3.4.3.12, n...
+     |
+     |  ECDSA_WITH_SHA512 = <ObjectIdentifier(oid=1.2.840.10045.4.3.4, name=ec...
+     |
+     |  ED25519 = <ObjectIdentifier(oid=1.3.101.112, name=ed25519)>
+     |
+     |  ED448 = <ObjectIdentifier(oid=1.3.101.113, name=ed448)>
+     |
+     |  GOSTR3410_2012_WITH_3411_2012_256 = <ObjectIdentifier(oid=1.2.643.7.1....
+     |
+     |  GOSTR3410_2012_WITH_3411_2012_512 = <ObjectIdentifier(oid=1.2.643.7.1....
+     |
+     |  GOSTR3411_94_WITH_3410_2001 = <ObjectIdentifier(oid=1.2.643.2.2.3, nam...
+     |
+     |  RSASSA_PSS = <ObjectIdentifier(oid=1.2.840.113549.1.1.10, name=rsassaP...
+     |
+     |  RSA_WITH_MD5 = <ObjectIdentifier(oid=1.2.840.113549.1.1.4, name=md5Wit...
+     |
+     |  RSA_WITH_SHA1 = <ObjectIdentifier(oid=1.2.840.113549.1.1.5, name=sha1W...
+     |
+     |  RSA_WITH_SHA224 = <ObjectIdentifier(oid=1.2.840.113549.1.1.14, name=sh...
+     |
+     |  RSA_WITH_SHA256 = <ObjectIdentifier(oid=1.2.840.113549.1.1.11, name=sh...
+     |
+     |  RSA_WITH_SHA384 = <ObjectIdentifier(oid=1.2.840.113549.1.1.12, name=sh...
+     |
+     |  RSA_WITH_SHA3_224 = <ObjectIdentifier(oid=2.16.840.1.101.3.4.3.13, nam...
+     |
+     |  RSA_WITH_SHA3_256 = <ObjectIdentifier(oid=2.16.840.1.101.3.4.3.14, nam...
+     |
+     |  RSA_WITH_SHA3_384 = <ObjectIdentifier(oid=2.16.840.1.101.3.4.3.15, nam...
+     |
+     |  RSA_WITH_SHA3_512 = <ObjectIdentifier(oid=2.16.840.1.101.3.4.3.16, nam...
+     |
+     |  RSA_WITH_SHA512 = <ObjectIdentifier(oid=1.2.840.113549.1.1.13, name=sh...
+
+    class SignedCertificateTimestamps(ExtensionType)
+     |  SignedCertificateTimestamps(signed_certificate_timestamps: 'typing.Iterable[SignedCertificateTimestamp]') -> 'None'
+     |
+     |  Method resolution order:
+     |      SignedCertificateTimestamps
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __getitem__ = getitem_method(self, idx) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, signed_certificate_timestamps: 'typing.Iterable[SignedCertificateTimestamp]') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__ = iter_method(self) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __len__ = len_method(self) -> 'int' from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=1.3.6.1.4.1.11129.2.4.5, name=signedCertif...
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class SubjectAlternativeName(ExtensionType)
+     |  SubjectAlternativeName(general_names: 'typing.Iterable[GeneralName]') -> 'None'
+     |
+     |  Method resolution order:
+     |      SubjectAlternativeName
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __getitem__ = getitem_method(self, idx) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, general_names: 'typing.Iterable[GeneralName]') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__ = iter_method(self) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __len__ = len_method(self) -> 'int' from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  get_values_for_type(self, type: 'type[DNSName] | type[DirectoryName] | type[IPAddress] | type[OtherName] | type[RFC822Name] | type[RegisteredID] | type[UniformResourceIdentifier]') -> 'list[_IPAddressTypes] | list[str] | list[OtherName] | list[Name] | list[ObjectIdentifier]'
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=2.5.29.17, name=subjectAltName)>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class SubjectInformationAccess(ExtensionType)
+     |  SubjectInformationAccess(descriptions: 'typing.Iterable[AccessDescription]') -> 'None'
+     |
+     |  Method resolution order:
+     |      SubjectInformationAccess
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __getitem__ = getitem_method(self, idx) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, descriptions: 'typing.Iterable[AccessDescription]') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__ = iter_method(self) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __len__ = len_method(self) -> 'int' from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=1.3.6.1.5.5.7.1.11, name=subjectInfoAccess...
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class SubjectKeyIdentifier(ExtensionType)
+     |  SubjectKeyIdentifier(digest: 'bytes') -> 'None'
+     |
+     |  Method resolution order:
+     |      SubjectKeyIdentifier
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, digest: 'bytes') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Class methods defined here:
+     |
+     |  from_public_key(public_key: 'CertificatePublicKeyTypes') -> 'SubjectKeyIdentifier'
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  digest
+     |
+     |  key_identifier
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=2.5.29.14, name=subjectKeyIdentifier)>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class TLSFeature(ExtensionType)
+     |  TLSFeature(features: 'typing.Iterable[TLSFeatureType]') -> 'None'
+     |
+     |  Method resolution order:
+     |      TLSFeature
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __getitem__ = getitem_method(self, idx) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, features: 'typing.Iterable[TLSFeatureType]') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__ = iter_method(self) from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __len__ = len_method(self) -> 'int' from cryptography.x509.extensions._make_sequence_methods.<locals>
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  oid = <ObjectIdentifier(oid=1.3.6.1.5.5.7.1.24, name=TLSFeature)>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class TLSFeatureType(cryptography.utils.Enum)
+     |  TLSFeatureType(*values)
+     |
+     |  Method resolution order:
+     |      TLSFeatureType
+     |      cryptography.utils.Enum
+     |      enum.Enum
+     |      builtins.object
+     |
+     |  Data and other attributes defined here:
+     |
+     |  status_request = <TLSFeatureType.status_request: 5>
+     |
+     |  status_request_v2 = <TLSFeatureType.status_request_v2: 17>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from enum.Enum:
+     |
+     |  name
+     |      The name of the Enum member.
+     |
+     |  value
+     |      The value of the Enum member.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from enum.EnumType:
+     |
+     |  __contains__(value)
+     |      Return True if `value` is in `cls`.
+     |
+     |      `value` is in `cls` if:
+     |      1) `value` is a member of `cls`, or
+     |      2) `value` is the value of one of the `cls`'s members.
+     |
+     |  __getitem__(name)
+     |      Return the member matching `name`.
+     |
+     |  __iter__()
+     |      Return members in definition order.
+     |
+     |  __len__()
+     |      Return the number of members (no aliases)
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties inherited from enum.EnumType:
+     |
+     |  __members__
+     |      Returns a mapping of member name->value.
+     |
+     |      This mapping lists all enum members, including aliases. Note that this
+     |      is a read-only view of the internal mapping.
+
+    class UniformResourceIdentifier(GeneralName)
+     |  UniformResourceIdentifier(value: 'str') -> 'None'
+     |
+     |  Method resolution order:
+     |      UniformResourceIdentifier
+     |      GeneralName
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, value: 'str') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  value
+     |      Return the value of the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from GeneralName:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class UnrecognizedExtension(ExtensionType)
+     |  UnrecognizedExtension(oid: 'ObjectIdentifier', value: 'bytes') -> 'None'
+     |
+     |  Method resolution order:
+     |      UnrecognizedExtension
+     |      ExtensionType
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, oid: 'ObjectIdentifier', value: 'bytes') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  public_bytes(self) -> 'bytes'
+     |      Serializes the extension type to DER.
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  oid
+     |
+     |  value
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |
+     |  __abstractmethods__ = frozenset()
+     |
+     |  __annotations__ = {}
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from ExtensionType:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class UnsupportedGeneralNameType(builtins.Exception)
+     |  Method resolution order:
+     |      UnsupportedGeneralNameType
+     |      builtins.Exception
+     |      builtins.BaseException
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.Exception:
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from builtins.Exception:
+     |
+     |  __new__(*args, **kwargs) class method of builtins.Exception
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.BaseException:
+     |
+     |  __getattribute__(self, name, /)
+     |      Return getattr(self, name).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __repr__(self, /)
+     |      Return repr(self).
+     |
+     |  __setstate__(...)
+     |
+     |  __str__(self, /)
+     |      Return str(self).
+     |
+     |  add_note(...)
+     |      Exception.add_note(note) --
+     |      add a note to the exception
+     |
+     |  with_traceback(...)
+     |      Exception.with_traceback(tb) --
+     |      set self.__traceback__ to tb and return self.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from builtins.BaseException:
+     |
+     |  __cause__
+     |      exception cause
+     |
+     |  __context__
+     |      exception context
+     |
+     |  __dict__
+     |
+     |  __suppress_context__
+     |
+     |  __traceback__
+     |
+     |  args
+
+    class UserNotice(builtins.object)
+     |  UserNotice(notice_reference: 'NoticeReference | None', explicit_text: 'str | None') -> 'None'
+     |
+     |  Methods defined here:
+     |
+     |  __eq__(self, other: 'object') -> 'bool'
+     |      Return self==value.
+     |
+     |  __hash__(self) -> 'int'
+     |      Return hash(self).
+     |
+     |  __init__(self, notice_reference: 'NoticeReference | None', explicit_text: 'str | None') -> 'None'
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self) -> 'str'
+     |      Return repr(self).
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  explicit_text
+     |
+     |  notice_reference
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class Version(cryptography.utils.Enum)
+     |  Version(*values)
+     |
+     |  Method resolution order:
+     |      Version
+     |      cryptography.utils.Enum
+     |      enum.Enum
+     |      builtins.object
+     |
+     |  Data and other attributes defined here:
+     |
+     |  v1 = <Version.v1: 0>
+     |
+     |  v3 = <Version.v3: 2>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from enum.Enum:
+     |
+     |  name
+     |      The name of the Enum member.
+     |
+     |  value
+     |      The value of the Enum member.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from enum.EnumType:
+     |
+     |  __contains__(value)
+     |      Return True if `value` is in `cls`.
+     |
+     |      `value` is in `cls` if:
+     |      1) `value` is a member of `cls`, or
+     |      2) `value` is the value of one of the `cls`'s members.
+     |
+     |  __getitem__(name)
+     |      Return the member matching `name`.
+     |
+     |  __iter__()
+     |      Return members in definition order.
+     |
+     |  __len__()
+     |      Return the number of members (no aliases)
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties inherited from enum.EnumType:
+     |
+     |  __members__
+     |      Returns a mapping of member name->value.
+     |
+     |      This mapping lists all enum members, including aliases. Note that this
+     |      is a read-only view of the internal mapping.
+
+FUNCTIONS
+    load_der_x509_certificate(data, backend=None)
+
+    load_der_x509_crl(data, backend=None)
+
+    load_der_x509_csr(data, backend=None)
+
+    load_pem_x509_certificate(data, backend=None)
+
+    load_pem_x509_certificates(data)
+
+    load_pem_x509_crl(data, backend=None)
+
+    load_pem_x509_csr(data, backend=None)
+
+    random_serial_number() -> 'int'
+
+DATA
+    OID_CA_ISSUERS = <ObjectIdentifier(oid=1.3.6.1.5.5.7.48.2, name=caIssu...
+    OID_OCSP = <ObjectIdentifier(oid=1.3.6.1.5.5.7.48.1, name=OCSP)>
+    __all__ = ['OID_CA_ISSUERS', 'OID_OCSP', 'AccessDescription', 'Admissi...
+
+FILE
+    /data/data/com.termux/files/usr/lib/python3.12/site-packages/cryptography/x509/__init__.py
+
+

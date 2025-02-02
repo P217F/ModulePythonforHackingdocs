@@ -1,0 +1,235 @@
+Help on module cryptography.x509.certificate_transparency in cryptography.x509:
+
+NAME
+    cryptography.x509.certificate_transparency
+
+DESCRIPTION
+    # This file is dual licensed under the terms of the Apache License, Version
+    # 2.0, and the BSD License. See the LICENSE file in the root of this repository
+    # for complete details.
+
+CLASSES
+    builtins.object
+        cryptography.hazmat.bindings._rust.x509.Sct
+    cryptography.utils.Enum(enum.Enum)
+        LogEntryType
+        SignatureAlgorithm
+        Version
+
+    class LogEntryType(cryptography.utils.Enum)
+     |  LogEntryType(*values)
+     |
+     |  Method resolution order:
+     |      LogEntryType
+     |      cryptography.utils.Enum
+     |      enum.Enum
+     |      builtins.object
+     |
+     |  Data and other attributes defined here:
+     |
+     |  PRE_CERTIFICATE = <LogEntryType.PRE_CERTIFICATE: 1>
+     |
+     |  X509_CERTIFICATE = <LogEntryType.X509_CERTIFICATE: 0>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from enum.Enum:
+     |
+     |  name
+     |      The name of the Enum member.
+     |
+     |  value
+     |      The value of the Enum member.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from enum.EnumType:
+     |
+     |  __contains__(value)
+     |      Return True if `value` is in `cls`.
+     |
+     |      `value` is in `cls` if:
+     |      1) `value` is a member of `cls`, or
+     |      2) `value` is the value of one of the `cls`'s members.
+     |
+     |  __getitem__(name)
+     |      Return the member matching `name`.
+     |
+     |  __iter__()
+     |      Return members in definition order.
+     |
+     |  __len__()
+     |      Return the number of members (no aliases)
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties inherited from enum.EnumType:
+     |
+     |  __members__
+     |      Returns a mapping of member name->value.
+     |
+     |      This mapping lists all enum members, including aliases. Note that this
+     |      is a read-only view of the internal mapping.
+
+    class SignatureAlgorithm(cryptography.utils.Enum)
+     |  SignatureAlgorithm(*values)
+     |
+     |  Signature algorithms that are valid for SCTs.
+     |
+     |  These are exactly the same as SignatureAlgorithm in RFC 5246 (TLS 1.2).
+     |
+     |  See: <https://datatracker.ietf.org/doc/html/rfc5246#section-7.4.1.4.1>
+     |
+     |  Method resolution order:
+     |      SignatureAlgorithm
+     |      cryptography.utils.Enum
+     |      enum.Enum
+     |      builtins.object
+     |
+     |  Data and other attributes defined here:
+     |
+     |  ANONYMOUS = <SignatureAlgorithm.ANONYMOUS: 0>
+     |
+     |  DSA = <SignatureAlgorithm.DSA: 2>
+     |
+     |  ECDSA = <SignatureAlgorithm.ECDSA: 3>
+     |
+     |  RSA = <SignatureAlgorithm.RSA: 1>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from enum.Enum:
+     |
+     |  name
+     |      The name of the Enum member.
+     |
+     |  value
+     |      The value of the Enum member.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from enum.EnumType:
+     |
+     |  __contains__(value)
+     |      Return True if `value` is in `cls`.
+     |
+     |      `value` is in `cls` if:
+     |      1) `value` is a member of `cls`, or
+     |      2) `value` is the value of one of the `cls`'s members.
+     |
+     |  __getitem__(name)
+     |      Return the member matching `name`.
+     |
+     |  __iter__()
+     |      Return members in definition order.
+     |
+     |  __len__()
+     |      Return the number of members (no aliases)
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties inherited from enum.EnumType:
+     |
+     |  __members__
+     |      Returns a mapping of member name->value.
+     |
+     |      This mapping lists all enum members, including aliases. Note that this
+     |      is a read-only view of the internal mapping.
+
+    SignedCertificateTimestamp = class Sct(builtins.object)
+     |  Methods defined here:
+     |
+     |  __eq__(self, value, /)
+     |      Return self==value.
+     |
+     |  __ge__(self, value, /)
+     |      Return self>=value.
+     |
+     |  __gt__(self, value, /)
+     |      Return self>value.
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __le__(self, value, /)
+     |      Return self<=value.
+     |
+     |  __lt__(self, value, /)
+     |      Return self<value.
+     |
+     |  __ne__(self, value, /)
+     |      Return self!=value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods defined here:
+     |
+     |  __new__(*args, **kwargs)
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  entry_type
+     |
+     |  extension_bytes
+     |
+     |  log_id
+     |
+     |  signature
+     |
+     |  signature_algorithm
+     |
+     |  signature_hash_algorithm
+     |
+     |  timestamp
+     |
+     |  version
+
+    class Version(cryptography.utils.Enum)
+     |  Version(*values)
+     |
+     |  Method resolution order:
+     |      Version
+     |      cryptography.utils.Enum
+     |      enum.Enum
+     |      builtins.object
+     |
+     |  Data and other attributes defined here:
+     |
+     |  v1 = <Version.v1: 0>
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from enum.Enum:
+     |
+     |  name
+     |      The name of the Enum member.
+     |
+     |  value
+     |      The value of the Enum member.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from enum.EnumType:
+     |
+     |  __contains__(value)
+     |      Return True if `value` is in `cls`.
+     |
+     |      `value` is in `cls` if:
+     |      1) `value` is a member of `cls`, or
+     |      2) `value` is the value of one of the `cls`'s members.
+     |
+     |  __getitem__(name)
+     |      Return the member matching `name`.
+     |
+     |  __iter__()
+     |      Return members in definition order.
+     |
+     |  __len__()
+     |      Return the number of members (no aliases)
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties inherited from enum.EnumType:
+     |
+     |  __members__
+     |      Returns a mapping of member name->value.
+     |
+     |      This mapping lists all enum members, including aliases. Note that this
+     |      is a read-only view of the internal mapping.
+
+FILE
+    /data/data/com.termux/files/usr/lib/python3.12/site-packages/cryptography/x509/certificate_transparency.py
+
+
