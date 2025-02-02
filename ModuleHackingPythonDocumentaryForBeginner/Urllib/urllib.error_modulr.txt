@@ -1,0 +1,363 @@
+Help on module urllib.error in urllib:
+
+NAME
+    urllib.error - Exception classes raised by urllib.
+
+MODULE REFERENCE
+    https://docs.python.org/3.12/library/urllib.error.html
+
+    The following documentation is automatically generated from the Python
+    source files.  It may be incomplete, incorrect or include features that
+    are considered implementation detail and may vary between Python
+    implementations.  When in doubt, consult the module reference at the
+    location listed above.
+
+DESCRIPTION
+    The base exception class is URLError, which inherits from OSError.  It
+    doesn't define any behavior of its own, but is the base class for all
+    exceptions defined in this package.
+
+    HTTPError is an exception class that is also a valid HTTP response
+    instance.  It behaves this way because HTTP protocol errors are valid
+    responses, with a status code, headers, and a body.  In some contexts,
+    an application may want to handle an exception like a regular
+    response.
+
+CLASSES
+    builtins.OSError(builtins.Exception)
+        URLError
+            ContentTooShortError
+            HTTPError(URLError, urllib.response.addinfourl)
+
+    class ContentTooShortError(URLError)
+     |  ContentTooShortError(message, content)
+     |
+     |  Exception raised when downloaded size does not match content-length.
+     |
+     |  Method resolution order:
+     |      ContentTooShortError
+     |      URLError
+     |      builtins.OSError
+     |      builtins.Exception
+     |      builtins.BaseException
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, message, content)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from URLError:
+     |
+     |  __str__(self)
+     |      Return str(self).
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from URLError:
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.OSError:
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from builtins.OSError:
+     |
+     |  __new__(*args, **kwargs) class method of builtins.OSError
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from builtins.OSError:
+     |
+     |  characters_written
+     |
+     |  errno
+     |      POSIX exception code
+     |
+     |  filename
+     |      exception filename
+     |
+     |  filename2
+     |      second exception filename
+     |
+     |  strerror
+     |      exception strerror
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.BaseException:
+     |
+     |  __getattribute__(self, name, /)
+     |      Return getattr(self, name).
+     |
+     |  __repr__(self, /)
+     |      Return repr(self).
+     |
+     |  __setstate__(...)
+     |
+     |  add_note(...)
+     |      Exception.add_note(note) --
+     |      add a note to the exception
+     |
+     |  with_traceback(...)
+     |      Exception.with_traceback(tb) --
+     |      set self.__traceback__ to tb and return self.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from builtins.BaseException:
+     |
+     |  __cause__
+     |      exception cause
+     |
+     |  __context__
+     |      exception context
+     |
+     |  __dict__
+     |
+     |  __suppress_context__
+     |
+     |  __traceback__
+     |
+     |  args
+
+    class HTTPError(URLError, urllib.response.addinfourl)
+     |  HTTPError(url, code, msg, hdrs, fp)
+     |
+     |  Raised when HTTP error occurs, but also acts like non-error return
+     |
+     |  Method resolution order:
+     |      HTTPError
+     |      URLError
+     |      builtins.OSError
+     |      builtins.Exception
+     |      builtins.BaseException
+     |      urllib.response.addinfourl
+     |      urllib.response.addinfo
+     |      urllib.response.addbase
+     |      tempfile._TemporaryFileWrapper
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, url, code, msg, hdrs, fp)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self)
+     |      Return repr(self).
+     |
+     |  __str__(self)
+     |      Return str(self).
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties defined here:
+     |
+     |  reason
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  headers
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from URLError:
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.OSError:
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from builtins.OSError:
+     |
+     |  __new__(*args, **kwargs) class method of builtins.OSError
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from builtins.OSError:
+     |
+     |  characters_written
+     |
+     |  errno
+     |      POSIX exception code
+     |
+     |  filename
+     |      exception filename
+     |
+     |  filename2
+     |      second exception filename
+     |
+     |  strerror
+     |      exception strerror
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.BaseException:
+     |
+     |  __getattribute__(self, name, /)
+     |      Return getattr(self, name).
+     |
+     |  __setstate__(...)
+     |
+     |  add_note(...)
+     |      Exception.add_note(note) --
+     |      add a note to the exception
+     |
+     |  with_traceback(...)
+     |      Exception.with_traceback(tb) --
+     |      set self.__traceback__ to tb and return self.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from builtins.BaseException:
+     |
+     |  __cause__
+     |      exception cause
+     |
+     |  __context__
+     |      exception context
+     |
+     |  __dict__
+     |
+     |  __suppress_context__
+     |
+     |  __traceback__
+     |
+     |  args
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from urllib.response.addinfourl:
+     |
+     |  getcode(self)
+     |
+     |  geturl(self)
+     |
+     |  ----------------------------------------------------------------------
+     |  Readonly properties inherited from urllib.response.addinfourl:
+     |
+     |  status
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from urllib.response.addinfo:
+     |
+     |  info(self)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from urllib.response.addbase:
+     |
+     |  __enter__(self)
+     |
+     |  __exit__(self, type, value, traceback)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from tempfile._TemporaryFileWrapper:
+     |
+     |  __getattr__(self, name)
+     |
+     |  __iter__(self)
+     |      # iter() doesn't use __getattr__ to find the __iter__ method
+     |
+     |  close(self)
+     |      Close the temporary file, possibly deleting it.
+
+    class URLError(builtins.OSError)
+     |  URLError(reason, filename=None)
+     |
+     |  Method resolution order:
+     |      URLError
+     |      builtins.OSError
+     |      builtins.Exception
+     |      builtins.BaseException
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, reason, filename=None)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __str__(self)
+     |      Return str(self).
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.OSError:
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from builtins.OSError:
+     |
+     |  __new__(*args, **kwargs) class method of builtins.OSError
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from builtins.OSError:
+     |
+     |  characters_written
+     |
+     |  errno
+     |      POSIX exception code
+     |
+     |  filename
+     |      exception filename
+     |
+     |  filename2
+     |      second exception filename
+     |
+     |  strerror
+     |      exception strerror
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.BaseException:
+     |
+     |  __getattribute__(self, name, /)
+     |      Return getattr(self, name).
+     |
+     |  __repr__(self, /)
+     |      Return repr(self).
+     |
+     |  __setstate__(...)
+     |
+     |  add_note(...)
+     |      Exception.add_note(note) --
+     |      add a note to the exception
+     |
+     |  with_traceback(...)
+     |      Exception.with_traceback(tb) --
+     |      set self.__traceback__ to tb and return self.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from builtins.BaseException:
+     |
+     |  __cause__
+     |      exception cause
+     |
+     |  __context__
+     |      exception context
+     |
+     |  __dict__
+     |
+     |  __suppress_context__
+     |
+     |  __traceback__
+     |
+     |  args
+
+DATA
+    __all__ = ['URLError', 'HTTPError', 'ContentTooShortError']
+
+FILE
+    /data/data/com.termux/files/usr/lib/python3.12/urllib/error.py
+
+
