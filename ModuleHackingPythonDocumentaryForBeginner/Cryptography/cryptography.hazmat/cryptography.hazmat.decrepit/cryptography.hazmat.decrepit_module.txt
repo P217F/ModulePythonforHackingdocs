@@ -1,0 +1,17 @@
+Help on package cryptography.hazmat.decrepit in cryptography.hazmat:
+
+NAME
+    cryptography.hazmat.decrepit
+
+DESCRIPTION
+    # This file is dual licensed under the terms of the Apache License, Version
+    # 2.0, and the BSD License. See the LICENSE file in the root of this repository
+    # for complete details.
+
+PACKAGE CONTENTS
+    ciphers (package)
+
+FILE
+    /data/data/com.termux/files/usr/lib/python3.12/site-packages/cryptography/hazmat/decrepit/__init__.py
+
+
