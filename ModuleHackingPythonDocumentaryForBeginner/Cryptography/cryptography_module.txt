@@ -1,0 +1,32 @@
+Help on package cryptography:
+
+NAME
+    cryptography
+
+DESCRIPTION
+    # This file is dual licensed under the terms of the Apache License, Version
+    # 2.0, and the BSD License. See the LICENSE file in the root of this repository
+    # for complete details.
+
+PACKAGE CONTENTS
+    __about__
+    exceptions
+    fernet
+    hazmat (package)
+    utils
+    x509 (package)
+
+DATA
+    __all__ = ['__author__', '__copyright__', '__version__']
+    __copyright__ = 'Copyright 2013-2024 The Python Cryptographic Authorit...
+
+VERSION
+    44.0.0
+
+AUTHOR
+    The Python Cryptographic Authority and individual contributors
+
+FILE
+    /data/data/com.termux/files/usr/lib/python3.12/site-packages/cryptography/__init__.py
+
+
