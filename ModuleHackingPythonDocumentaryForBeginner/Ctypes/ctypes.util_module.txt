@@ -1,0 +1,23 @@
+Help on module ctypes.util in ctypes:
+
+NAME
+    ctypes.util
+
+MODULE REFERENCE
+    https://docs.python.org/3.12/library/ctypes.util.html
+
+    The following documentation is automatically generated from the Python
+    source files.  It may be incomplete, incorrect or include features that
+    are considered implementation detail and may vary between Python
+    implementations.  When in doubt, consult the module reference at the
+    location listed above.
+
+FUNCTIONS
+    find_library(name)
+
+    test()
+
+FILE
+    /data/data/com.termux/files/usr/lib/python3.12/ctypes/util.py
+
+

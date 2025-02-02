@@ -1,0 +1,3810 @@
+Help on module ctypes.wintypes in ctypes:
+
+NAME
+    ctypes.wintypes - # The most useful windows datatypes
+
+MODULE REFERENCE
+    https://docs.python.org/3.12/library/ctypes.wintypes.html
+
+    The following documentation is automatically generated from the Python
+    source files.  It may be incomplete, incorrect or include features that
+    are considered implementation detail and may vary between Python
+    implementations.  When in doubt, consult the module reference at the
+    location listed above.
+
+CLASSES
+    _ctypes.Structure(_ctypes._CData)
+        FILETIME
+        MSG
+        POINT
+        RECT
+        SIZE
+        WIN32_FIND_DATAA
+        WIN32_FIND_DATAW
+        _SMALL_RECT
+    _ctypes._Pointer(_ctypes._CData)
+        LP_FILETIME
+        LP_MSG
+        LP_POINT
+        LP_RECT
+        LP_SIZE
+        LP_WIN32_FIND_DATAA
+        LP_WIN32_FIND_DATAW
+        LP__SMALL_RECT
+        LP_c_float
+        LP_c_long
+        LP_c_longlong
+        LP_c_short
+        LP_c_ubyte
+        LP_c_ulong
+        LP_c_ulonglong
+        LP_c_ushort
+        LP_c_void_p
+    _ctypes._SimpleCData(_ctypes._CData)
+        VARIANT_BOOL
+
+    class FILETIME(_ctypes.Structure)
+     |  Method resolution order:
+     |      FILETIME
+     |      _ctypes.Structure
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  dwHighDateTime
+     |
+     |  dwLowDateTime
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes.Structure:
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes.Structure:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes.Structure
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    LPBOOL = class LP_c_long(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_long
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    LPBYTE = class LP_c_ubyte(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_ubyte
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    LPCOLORREF = class LP_c_ulong(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_ulong
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    LPDWORD = class LP_c_ulong(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_ulong
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    LPFILETIME = class LP_FILETIME(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_FILETIME
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    LPHANDLE = class LP_c_void_p(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_void_p
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    LPHKL = class LP_c_void_p(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_void_p
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    LPINT = class LP_c_long(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_long
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    LPLONG = class LP_c_long(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_long
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    LPMSG = class LP_MSG(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_MSG
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    LPPOINT = class LP_POINT(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_POINT
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    LPRECT = class LP_RECT(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_RECT
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    LPRECTL = class LP_RECT(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_RECT
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    LPSC_HANDLE = class LP_c_void_p(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_void_p
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    LPSIZE = class LP_SIZE(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_SIZE
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    LPSIZEL = class LP_SIZE(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_SIZE
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    LPUINT = class LP_c_ulong(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_ulong
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    LPWIN32_FIND_DATAA = class LP_WIN32_FIND_DATAA(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_WIN32_FIND_DATAA
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    LPWIN32_FIND_DATAW = class LP_WIN32_FIND_DATAW(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_WIN32_FIND_DATAW
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    LPWORD = class LP_c_ushort(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_ushort
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    class MSG(_ctypes.Structure)
+     |  Method resolution order:
+     |      MSG
+     |      _ctypes.Structure
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  hWnd
+     |
+     |  lParam
+     |
+     |  message
+     |
+     |  pt
+     |
+     |  time
+     |
+     |  wParam
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes.Structure:
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes.Structure:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes.Structure
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PBOOL = class LP_c_long(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_long
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PBOOLEAN = class LP_c_ubyte(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_ubyte
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PBYTE = class LP_c_ubyte(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_ubyte
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PDWORD = class LP_c_ulong(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_ulong
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PFILETIME = class LP_FILETIME(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_FILETIME
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PFLOAT = class LP_c_float(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_float
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PHANDLE = class LP_c_void_p(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_void_p
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PHKEY = class LP_c_void_p(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_void_p
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PINT = class LP_c_long(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_long
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PLARGE_INTEGER = class LP_c_longlong(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_longlong
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PLCID = class LP_c_ulong(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_ulong
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PLONG = class LP_c_long(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_long
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PMSG = class LP_MSG(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_MSG
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    class POINT(_ctypes.Structure)
+     |  Method resolution order:
+     |      POINT
+     |      _ctypes.Structure
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  x
+     |
+     |  y
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes.Structure:
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes.Structure:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes.Structure
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    POINTL = class POINT(_ctypes.Structure)
+     |  Method resolution order:
+     |      POINT
+     |      _ctypes.Structure
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  x
+     |
+     |  y
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes.Structure:
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes.Structure:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes.Structure
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PPOINT = class LP_POINT(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_POINT
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PPOINTL = class LP_POINT(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_POINT
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PRECT = class LP_RECT(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_RECT
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PRECTL = class LP_RECT(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_RECT
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PSHORT = class LP_c_short(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_short
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PSIZE = class LP_SIZE(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_SIZE
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PSIZEL = class LP_SIZE(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_SIZE
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PSMALL_RECT = class LP__SMALL_RECT(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP__SMALL_RECT
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PUINT = class LP_c_ulong(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_ulong
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PULARGE_INTEGER = class LP_c_ulonglong(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_ulonglong
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PULONG = class LP_c_ulong(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_ulong
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PUSHORT = class LP_c_ushort(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_ushort
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PWIN32_FIND_DATAA = class LP_WIN32_FIND_DATAA(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_WIN32_FIND_DATAA
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PWIN32_FIND_DATAW = class LP_WIN32_FIND_DATAW(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_WIN32_FIND_DATAW
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    PWORD = class LP_c_ushort(_ctypes._Pointer)
+     |  Method resolution order:
+     |      LP_c_ushort
+     |      _ctypes._Pointer
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._Pointer:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __getitem__(self, key, /)
+     |      Return self[key].
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._Pointer:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._Pointer
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._Pointer:
+     |
+     |  contents
+     |      the object this pointer points to (read-write)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    class RECT(_ctypes.Structure)
+     |  Method resolution order:
+     |      RECT
+     |      _ctypes.Structure
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  bottom
+     |
+     |  left
+     |
+     |  right
+     |
+     |  top
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes.Structure:
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes.Structure:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes.Structure
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    RECTL = class RECT(_ctypes.Structure)
+     |  Method resolution order:
+     |      RECT
+     |      _ctypes.Structure
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  bottom
+     |
+     |  left
+     |
+     |  right
+     |
+     |  top
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes.Structure:
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes.Structure:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes.Structure
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    class SIZE(_ctypes.Structure)
+     |  Method resolution order:
+     |      SIZE
+     |      _ctypes.Structure
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  cx
+     |
+     |  cy
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes.Structure:
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes.Structure:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes.Structure
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    SIZEL = class SIZE(_ctypes.Structure)
+     |  Method resolution order:
+     |      SIZE
+     |      _ctypes.Structure
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  cx
+     |
+     |  cy
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes.Structure:
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes.Structure:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes.Structure
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    SMALL_RECT = class _SMALL_RECT(_ctypes.Structure)
+     |  Method resolution order:
+     |      _SMALL_RECT
+     |      _ctypes.Structure
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  Bottom
+     |
+     |  Left
+     |
+     |  Right
+     |
+     |  Top
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes.Structure:
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes.Structure:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes.Structure
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    class VARIANT_BOOL(_ctypes._SimpleCData)
+     |  Method resolution order:
+     |      VARIANT_BOOL
+     |      _ctypes._SimpleCData
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __repr__(self)
+     |      Return repr(self).
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._SimpleCData:
+     |
+     |  __bool__(self, /)
+     |      True if self else False
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes._SimpleCData:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes._SimpleCData
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from _ctypes._SimpleCData:
+     |
+     |  value
+     |      current value
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    class WIN32_FIND_DATAA(_ctypes.Structure)
+     |  Method resolution order:
+     |      WIN32_FIND_DATAA
+     |      _ctypes.Structure
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  cAlternateFileName
+     |
+     |  cFileName
+     |
+     |  dwFileAttributes
+     |
+     |  dwReserved0
+     |
+     |  dwReserved1
+     |
+     |  ftCreationTime
+     |
+     |  ftLastAccessTime
+     |
+     |  ftLastWriteTime
+     |
+     |  nFileSizeHigh
+     |
+     |  nFileSizeLow
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes.Structure:
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes.Structure:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes.Structure
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    class WIN32_FIND_DATAW(_ctypes.Structure)
+     |  Method resolution order:
+     |      WIN32_FIND_DATAW
+     |      _ctypes.Structure
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  cAlternateFileName
+     |
+     |  cFileName
+     |
+     |  dwFileAttributes
+     |
+     |  dwReserved0
+     |
+     |  dwReserved1
+     |
+     |  ftCreationTime
+     |
+     |  ftLastAccessTime
+     |
+     |  ftLastWriteTime
+     |
+     |  nFileSizeHigh
+     |
+     |  nFileSizeLow
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes.Structure:
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes.Structure:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes.Structure
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    tagMSG = class MSG(_ctypes.Structure)
+     |  Method resolution order:
+     |      MSG
+     |      _ctypes.Structure
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  hWnd
+     |
+     |  lParam
+     |
+     |  message
+     |
+     |  pt
+     |
+     |  time
+     |
+     |  wParam
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes.Structure:
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes.Structure:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes.Structure
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    tagPOINT = class POINT(_ctypes.Structure)
+     |  Method resolution order:
+     |      POINT
+     |      _ctypes.Structure
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  x
+     |
+     |  y
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes.Structure:
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes.Structure:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes.Structure
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    tagRECT = class RECT(_ctypes.Structure)
+     |  Method resolution order:
+     |      RECT
+     |      _ctypes.Structure
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  bottom
+     |
+     |  left
+     |
+     |  right
+     |
+     |  top
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes.Structure:
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes.Structure:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes.Structure
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+    tagSIZE = class SIZE(_ctypes.Structure)
+     |  Method resolution order:
+     |      SIZE
+     |      _ctypes.Structure
+     |      _ctypes._CData
+     |      builtins.object
+     |
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+     |
+     |  cx
+     |
+     |  cy
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes.Structure:
+     |
+     |  __buffer__(self, flags, /)
+     |      Return a buffer object that exposes the underlying memory of the object.
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _ctypes.Structure:
+     |
+     |  __new__(*args, **kwargs) class method of _ctypes.Structure
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _ctypes._CData:
+     |
+     |  __ctypes_from_outparam__(...)
+     |
+     |  __hash__(self, /)
+     |      Return hash(self).
+     |
+     |  __reduce__(...)
+     |      Helper for pickle.
+     |
+     |  __setstate__(...)
+
+FUNCTIONS
+    RGB(red, green, blue)
+
+DATA
+    MAX_PATH = 260
+
+FILE
+    /data/data/com.termux/files/usr/lib/python3.12/ctypes/wintypes.py
+
+
